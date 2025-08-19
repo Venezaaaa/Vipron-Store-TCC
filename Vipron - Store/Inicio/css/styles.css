@@ -195,7 +195,7 @@ nav ul li a:hover {
 
 .imagen {
     background-color: white;
-    width: 16%;
+    width: 18%;
 }
 .imagen img {
     width: 100%;
@@ -205,9 +205,8 @@ nav ul li a:hover {
     width: 100%;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to right, #26398b, #151e48 );    
-    
 }
+
 .produtos_top {
     margin-top: 50px;
     display: flex;
@@ -223,11 +222,12 @@ nav ul li a:hover {
     text-align: center;
     text-decoration: none;
     width: 15%;
-    
+    gap: 20px;
     background-color:#ffffff;
     transition: 0.5s;
     align-items: center;
     text-decoration: none;
+    margin-left: 20px;
 }
 
 .produto a {
@@ -241,7 +241,7 @@ nav ul li a:hover {
 
 
 .produto img {
-    width: 100%;
+    width: 200px;
 }
 
 .produto h3 {
