@@ -38,10 +38,12 @@ header .logo h1 {
 }
 
 
+/* Navegação */
 nav ul {
     list-style-type: none;
     display: flex;
     gap: 20px;
+    width: 100%;
 }
 
 nav ul li a {
@@ -54,6 +56,7 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #007bff;
+    transform: scale(1.1);
 }
 
 /* Botão de cadastro */
@@ -282,29 +285,34 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #000000;
+    background-color: #2f2f2f; /* Fundo escuro para o rodapé */
     color: #ffffff;
     font-size: 14px;
     height: auto;
     width: 100%;
+    padding: 20px 0;
 }
 
 footer p {
     margin-left: 4%;
-    font-size: 20px;
+    font-size: 18px;
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border-radius: 50px;
-    padding: 20px;
+    padding: 15px 20px;
     width: 33%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 footer a {
     text-decoration: none;
     background-color: #000000;
     color: white;
-    margin: 50px 12px;
+    margin: 50px 12px 50px;
     margin-left: 5%;
+    padding: 10px 20px;
+    border-radius: 30px;
+
 }
 
 footer h1 {

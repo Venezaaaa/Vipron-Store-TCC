@@ -57,6 +57,7 @@ footer a {
     margin-left: 5%;
     padding: 10px 20px;
     border-radius: 30px;
+
 }
 
 footer h1 {
@@ -184,7 +185,7 @@ nav ul li a:hover {
 }
 
 .imagen {
-    background-color: white;
+
     width: 18%;
 }
 
@@ -203,9 +204,8 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     width: auto;
-    background-color: #ffffff;
-    margin-bottom: 50px;
-    box-shadow: 0 4px 0px rgb(0, 0, 0);
+    margin-bottom: 1px;
+
 }
 
 .produto {
@@ -227,16 +227,14 @@ nav ul li a:hover {
 }
 
 .produto img {
-    width: 200px;
+    width: 100%;
 }
 
 .produto h3 {
-    font-size: 100%;
-    text-decoration: none;
-    color: black;
-    margin-top: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
 }
-
 .produto p {
     margin: 10px 0;
     font-size: 100%;
@@ -261,7 +259,7 @@ nav ul li a:hover {
     border-radius: 10px;
     align-items: center;
     margin: 0px;
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 .h2 {
