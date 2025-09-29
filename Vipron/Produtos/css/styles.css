@@ -189,7 +189,7 @@ nav ul li a:hover {
 .section_categoria {
     background-color: #000000;
     text-align: center;
-    max-width: 100%;
+    max-width: 100%;                                
     transition: 0.9s;
 
 }
@@ -351,6 +351,7 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/*---FOOTER---*/
 footer {
 
     background-color: #000000; /* Fundo escuro para o rodapé */
