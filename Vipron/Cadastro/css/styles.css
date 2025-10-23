@@ -24,6 +24,28 @@ header {
     transition: 0.5s;
 }
 
+.cart-icon {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .cart-icon img {
+    width: 28px; /* ou o tamanho que preferir */
+    height: auto;
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: -6px;   /* sobe a bolinha */
+    right: -6px; /* move para o canto direito */
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+    line-height: 1;
+  }
 
 
 

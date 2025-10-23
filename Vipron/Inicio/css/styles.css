@@ -5,7 +5,7 @@
 }
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #f0f4f8, #d8e2e7); /* Gradiente suave do topo para baixo */
+    baakground: linear-gradient(to bottom, #f0f4f8, #d8e2e7); /* Gradiente suave do topo para baixo */
     color: #333;
 }
 
@@ -84,22 +84,27 @@ footer {
 
 .cart-icon {
     position: relative;
-}
-
-.cart-badge {
+    display: inline-block;
+  }
+  
+  .cart-icon img {
+    width: 28px; /* ou o tamanho que preferir */
+    height: auto;
+  }
+  
+  .cart-badge {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #ff0000;
+    top: -6px;   /* sobe a bolinha */
+    right: -6px; /* move para o canto direito */
+    background-color: red;
     color: white;
-    border-radius: 50%;
-    padding: 2px 6px;
     font-size: 12px;
     font-weight: bold;
-    min-width: 18px;
-    text-align: center;
-    display: none;
-}
+    border-radius: 50%;
+    padding: 2px 6px;
+    line-height: 1;
+  }
+  
 
 .toast {
     position: fixed;

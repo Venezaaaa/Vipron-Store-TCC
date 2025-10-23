@@ -1,9 +1,15 @@
+// --- Função: adicionar produto ao carrinho ---
 function adicionarCarrinho(nome, preco, imagem) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   carrinho.push({ nome, preco, imagem });
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+  // Atualiza badge e mostra notificação
+  atualizarBadgeCarrinho();
+  mostrarToast(`${nome} adicionado ao carrinho!`);
 }
 
+// --- Renderiza os itens do carrinho ---
 function renderCarrinho() {
   const carrinhoDiv = document.getElementById("carrinho");
   const totalEl = document.getElementById("total");
@@ -46,42 +52,37 @@ function renderCarrinho() {
   totalEl.textContent = `Total: R$ ${total.toFixed(2)}`;
 }
 
+// --- Remove um item ---
 function removerItem(index) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   carrinho.splice(index, 1);
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
   renderCarrinho();
+  atualizarBadgeCarrinho();
 }
 
+// --- Compra de item ---
 function comprarItem(index) {
   const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
   const item = carrinho[index];
   alert(`Você comprou: ${item.nome} por R$ ${item.preco.toFixed(2)}!`);
-
 }
 
+// --- Limpa o carrinho ---
 function limparCarrinho() {
   localStorage.removeItem("carrinho");
   renderCarrinho();
+  atualizarBadgeCarrinho();
 }
 
+// --- Atualiza o carrinho manualmente ---
 function atualizarCarrinho() {
   renderCarrinho();
+  atualizarBadgeCarrinho();
 }
 
-window.onload = function () {
-  renderCarrinho();
-
-  const btnLimpar = document.getElementById("limpar-carrinho");
-  const btnAtualizar = document.getElementById("atualizar-carrinho");
-
-  if (btnLimpar) btnLimpar.addEventListener("click", limparCarrinho);
-  if (btnAtualizar) btnAtualizar.addEventListener("click", atualizarCarrinho);
-};
-
-
-/* CODIGO DO CEP AUTO-PREENCHIMENTO*/
-document.getElementById('cep').addEventListener('blur', function () {
+// --- CEP auto-preenchimento ---
+document.getElementById('cep')?.addEventListener('blur', function () {
   let cep = this.value.replace(/\D/g, '');
 
   if (cep.length !== 8) {
@@ -108,3 +109,38 @@ document.getElementById('cep').addEventListener('blur', function () {
     });
 });
 
+// --- Atualiza o badge (contador do carrinho) ---
+function atualizarBadgeCarrinho() {
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  const totalItens = carrinho.length; // cada item adicionado conta 1
+  const badge = document.querySelector('.cart-badge');
+
+  if (badge) {
+    badge.textContent = totalItens;
+    badge.style.display = totalItens > 0 ? 'inline-block' : 'none';
+  }
+}
+
+// --- Mostra a notificação (toast) ---
+function mostrarToast(mensagem) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = mensagem;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 3000);
+}
+
+// --- Quando a página carrega ---
+window.onload = function () {
+  renderCarrinho();
+  atualizarBadgeCarrinho();
+
+  const btnLimpar = document.getElementById("limpar-carrinho");
+  const btnAtualizar = document.getElementById("atualizar-carrinho");
+
+  if (btnLimpar) btnLimpar.addEventListener("click", limparCarrinho);
+  if (btnAtualizar) btnAtualizar.addEventListener("click", atualizarCarrinho);
+};
