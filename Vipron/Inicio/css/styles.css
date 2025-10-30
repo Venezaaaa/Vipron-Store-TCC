@@ -13,21 +13,25 @@ body {
 
 /* Cabeçalho */
 header {
+    
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
     align-items: center;
+
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
 }
 .logo {
-    width: 10%;
+    width: 20%;
+    margin-left: 5%;
 }
 
 .logo img {
-    width: 30%
+    width: 50px;
 }
 
 /* Navegação */
@@ -35,6 +39,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -441,7 +446,6 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
     .produtos, .produtos_top {
-        padding: 20px 10px;
         gap: 10px;
     }
 
@@ -452,6 +456,9 @@ footer {
 
     .produto h3 {
         font-size: 18px;
+    }
+    .produto img {
+        width: 100%;
     }
 
     .produto p {
@@ -466,7 +473,7 @@ footer {
     }
 
     header {
-        padding: 15px;
+        padding: 20px;
     }
 
     nav ul {
