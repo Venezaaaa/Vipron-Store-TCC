@@ -12,80 +12,144 @@ body {
 
     
 }
-/* cabeçalho */
+/* Cabeçalho */
 header {
+    
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
     align-items: center;
-    padding: 25px;
-    background-color: #f1f1f1;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
 }
+.logo {
+    width: 20%;
+    margin-left: 5%;
+}
 
+.logo img {
+    width: 50px;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    gap: 20px;
+    width: 100%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Ícone do carrinho */
 .cart-icon {
     position: relative;
     display: inline-block;
-  }
-  
-  .cart-icon img {
-    width: 28px; /* ou o tamanho que preferir */
+}
+
+.cart-icon img {
+    width: 28px;
     height: auto;
-  }
-  
-  .cart-badge {
+}
+
+.cart-badge {
     position: absolute;
-    top: -6px;   /* sobe a bolinha */
-    right: -6px; /* move para o canto direito */
+    top: -6px;
+    right: -6px;
     background-color: red;
     color: white;
     font-size: 12px;
     font-weight: bold;
     border-radius: 50%;
     padding: 2px 6px;
-    line-height: 1;
-  }
+}
 
-
-
+/* Rodapé */
 footer {
-    background-color: #2f2f2f; /* Fundo escuro para o rodapé */
-    color: #ffffff;
-    font-size: 14px;
-    height: auto;
-    width: 100%;
-    padding: 20px 0;
+    background-color: #2f2f2f;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-footer p {
-    margin-left: 4%;
+.footer-section {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
     font-size: 18px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 50px;
-    padding: 15px 20px;
-    width: 33%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-footer a {
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #ccc;
     text-decoration: none;
-    background-color: #000000;
-    color: white;
-    margin: 50px 12px 50px;
-    margin-left: 5%;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.bt-cadastro {
+    background-color: #000;
     padding: 10px 20px;
-    border-radius: 30px;
-
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-footer h1 {
-    margin-left: 5%;
-    margin-top: 0px;
+.bt-cadastro:hover {
+    background-color: #333;
 }
 
+/* Notificação */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in;
+}
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 .infos {
     width: 12%;
     background-color: b;
@@ -106,60 +170,7 @@ footer h1 {
     gap: 8%;
     background-color: #000000;   
 }
-.logo img {
-    width: 10%;
-    margin-left: 20px;
-}
 
-.bt-cadastro {
-    background-color: #000000;
-    padding: 10px 20px;
-    border-radius: 25px;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.bt-cadastro:hover {
-    background-color: #333;
-}
-
-
-.btn-carrinho{
-    color: #f1f1f1;
-    background-color: #838383; ;
-    padding: 10px 8px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 15px;
-    display: inline-block;
-    transition: 0.8s;
-    margin-top: 5px;
-}
-
-
-/* Navegação */
-nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-    width: 100%;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.8s;
-}
-
-nav ul li a:hover {
-    color: #007bff;
-    transform: scale(1.1);
-}
 /* Banner */
 
 .banner h2 {

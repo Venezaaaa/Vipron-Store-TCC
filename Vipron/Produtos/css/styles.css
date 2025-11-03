@@ -16,21 +16,25 @@ body {
 
 /* Cabeçalho */
 header {
+    
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
     align-items: center;
+
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
 }
 .logo {
-    width: 10%;
+    width: 20%;
+    margin-left: 5%;
 }
 
 .logo img {
-    width: 30%
+    width: 50px;
 }
 
 /* Navegação */
@@ -38,6 +42,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    gap: 20px;
     width: 100%;
 }
 
@@ -77,11 +82,48 @@ nav ul li a:hover {
     padding: 2px 6px;
 }
 
+/* Rodapé */
+footer {
+    background-color: #2f2f2f;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
 .bt-cadastro {
-    background-color: #000000;
+    background-color: #000;
     padding: 10px 20px;
     border-radius: 25px;
-    color: #ffffff;
+    color: #fff;
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1px;
@@ -110,9 +152,6 @@ nav ul li a:hover {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-
-
 /* Banner */
 .banner {
     text-align: center;
@@ -157,7 +196,7 @@ nav ul li a:hover {
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;
-    background-color: rgb(158, 121, 121);
+    background-color: rgb(243, 243, 243);;
 }
 
 .produtos2 {
@@ -169,10 +208,6 @@ nav ul li a:hover {
     margin-right: 5%;
     background-color: black;
 }
-.produtos {
-    background-color: rgb(243, 243, 243);
-}
-
 
 .produto {
     text-align: center;
@@ -194,20 +229,11 @@ nav ul li a:hover {
 
 .produto img {
     width: 100%;
-    height: auto;
     border-radius: 8px;
 }
 
-.produto h3 {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.produto p {
-    margin: 10px 0;
-    color: #007bff;
-}
+.produto h3 { margin-top: 20px; font-size: 20px; font-weight: 600; }
+.produto p { margin: 10px 0; color: #007bff; }
 
 .produto button {
     background-color: #28a745;
@@ -396,44 +422,6 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/*---FOOTER---*/
-footer {
-
-    background-color: #000000; /* Fundo escuro para o rodapé */
-    color: #ffffff;
-    font-size: 14px;
-    height: auto;
-    width: 100%;
-    padding: 20px 0;
-}
-
-footer p {
-    margin-left: 4%;
-    font-size: 18px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(26, 26, 26);
-    border-radius: 50px;
-    padding: 15px 20px;
-    width: 33%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-footer a {
-    text-decoration: none;
-    background-color: #3d3d3d;
-    color: white;
-    margin: 50px 12px 50px;
-    margin-left: 5%;
-    padding: 10px 20px;
-    border-radius: 30px;
-
-}
-
-footer h1 {
-    margin-left: 5%;
-    margin-top: 0px;
-}
-
 
 .infos {
     width: 12%;
@@ -489,10 +477,10 @@ footer h1 {
     width: 100%;
 }
 
-  /* Responsividade */
+
+/* Responsividade */
 @media (max-width: 768px) {
     .produtos, .produtos_top {
-        padding: 20px 10px;
         gap: 10px;
     }
 
@@ -503,6 +491,9 @@ footer h1 {
 
     .produto h3 {
         font-size: 18px;
+    }
+    .produto img {
+        width: 100%;
     }
 
     .produto p {
@@ -517,7 +508,7 @@ footer h1 {
     }
 
     header {
-        padding: 15px;
+        padding: 20px;
     }
 
     nav ul {
@@ -579,6 +570,9 @@ footer h1 {
         width: 22px;
         height: 22px;
     }
+    .produtos button img{
+        width: 40%;
+    }
 
     .ver-detalhes {
         background-color: #1a1a1a;
@@ -596,13 +590,12 @@ footer h1 {
     }
 
     header {
-        flex-wrap: wrap;
+        display: flex;
         padding: 15px;
     }
 
     nav ul {
         gap: 5px;
-        flex-wrap: wrap;
     }
 
     nav ul li a {
@@ -614,5 +607,3 @@ footer h1 {
         gap: 10px;
     }
 }
-
-  
