@@ -1,10 +1,15 @@
 // --- Função: adicionar produto ao carrinho ---
 function adicionarCarrinho(nome, preco, imagem) {
   let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  carrinho.push({ nome, preco, imagem });
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  const index = carrinho.findIndex(item => item.nome === nome);
 
-  // Atualiza badge e mostra notificação
+  if (index > -1) {
+    carrinho[index].quantidade += 1;
+  } else {
+    carrinho.push({ nome, preco, imagem, quantidade: 1 });
+  }
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
   atualizarBadgeCarrinho();
   mostrarToast(`${nome} adicionado ao carrinho!`);
 }
@@ -21,35 +26,52 @@ function renderCarrinho() {
   let total = 0;
 
   carrinho.forEach((item, index) => {
-    total += item.preco;
+    total += item.preco * item.quantidade;
 
     const linhaItem = document.createElement("div");
     linhaItem.classList.add("linha-item");
 
-    const colunaItem = document.createElement("div");
-    colunaItem.classList.add("coluna-item");
-    colunaItem.innerHTML = `
-      <div class="item-conteudo">
+    linhaItem.innerHTML = `
+      <div class="coluna-item">
         <img src="${item.imagem}" alt="${item.nome}" class="imagem-carrinho">
-        <div class="info-produto">
-          <span>${item.nome}</span>
-          <div class="botoes-produto">
-            <button onclick="removerItem(${index})" class="btn-carrinho-remover">Remover</button>
-          </div>
+        <span>${item.nome}</span>
+      </div>
+      <div class="coluna-preco">
+        <span>R$ ${(item.preco * item.quantidade).toFixed(2)}</span>
+        <div class="botoes-quantidade">
+          <button onclick="alterarQuantidade(${index}, -1)">-</button>
+          <span class="quantidade">${item.quantidade}</span>
+          <button onclick="alterarQuantidade(${index}, 1)">+</button>
+          <button onclick="removerItem(${index})">x</button>
         </div>
       </div>
     `;
 
-    const colunaPreco = document.createElement("div");
-    colunaPreco.classList.add("coluna-preco");
-    colunaPreco.innerHTML = `<span>R$ ${item.preco.toFixed(2)}</span>`;
-
-    linhaItem.appendChild(colunaItem);
-    linhaItem.appendChild(colunaPreco);
     carrinhoDiv.appendChild(linhaItem);
   });
 
   totalEl.textContent = `Total: R$ ${total.toFixed(2)}`;
+}
+
+// --- Alterar quantidade de um item ---
+function alterarQuantidade(index, delta) {
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  const item = carrinho[index];
+
+  if (!item) return;
+
+  if (delta === -1 && item.quantidade === 1) {
+    if (confirm(`Deseja remover ${item.nome} do carrinho?`)) {
+      carrinho.splice(index, 1);
+    }
+  } else {
+    item.quantidade += delta;
+    if (item.quantidade < 1) item.quantidade = 1;
+  }
+
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  renderCarrinho();
+  atualizarBadgeCarrinho();
 }
 
 // --- Remove um item ---
@@ -59,13 +81,6 @@ function removerItem(index) {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
   renderCarrinho();
   atualizarBadgeCarrinho();
-}
-
-// --- Compra de item ---
-function comprarItem(index) {
-  const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-  const item = carrinho[index];
-  alert(`Você comprou: ${item.nome} por R$ ${item.preco.toFixed(2)}!`);
 }
 
 // --- Limpa o carrinho ---
@@ -84,7 +99,6 @@ function atualizarCarrinho() {
 // --- CEP auto-preenchimento ---
 document.getElementById('cep')?.addEventListener('blur', function () {
   let cep = this.value.replace(/\D/g, '');
-
   if (cep.length !== 8) {
     alert('CEP inválido.');
     return;
@@ -97,7 +111,6 @@ document.getElementById('cep')?.addEventListener('blur', function () {
         alert('CEP não encontrado.');
         return;
       }
-
       document.getElementById('endereco').value = data.logradouro;
       document.getElementById('bairro').value = data.bairro;
       document.getElementById('cidade').value = data.localidade;
@@ -112,7 +125,7 @@ document.getElementById('cep')?.addEventListener('blur', function () {
 // --- Atualiza o badge (contador do carrinho) ---
 function atualizarBadgeCarrinho() {
   const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-  const totalItens = carrinho.length; // cada item adicionado conta 1
+  const totalItens = carrinho.reduce((sum, item) => sum + item.quantidade, 0);
   const badge = document.querySelector('.cart-badge');
 
   if (badge) {

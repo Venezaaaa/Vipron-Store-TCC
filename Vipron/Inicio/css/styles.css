@@ -13,13 +13,11 @@ body {
 
 /* Cabeçalho */
 header {
-    
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -119,7 +117,7 @@ footer {
 .bt-cadastro {
     background-color: #000;
     padding: 10px 20px;
-    border-radius: 25px;
+    border-radius: 20px;
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;

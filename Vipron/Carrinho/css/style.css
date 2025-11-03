@@ -11,13 +11,11 @@ body {
 
 /* Cabeçalho */
 header {
-    
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 20px;
     align-items: center;
-
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -258,7 +256,7 @@ footer {
     display: flex;
     justify-content: space-between;
     gap: 10px;
-    margin-top: 20px;
+    margin: 5%;
   }
   
   .btn-carrinho {
@@ -279,9 +277,9 @@ footer {
     transform: scale(1.02);
   }
   
-  .btn-carrinho.cinza {
+  .btn-carrinho-cinza {
     background-color: #f2f2f2;
-    color: #333;
+    color: #000000;
   }
 
   img {
@@ -320,6 +318,7 @@ footer {
     margin-top: 8px;
     margin-bottom: 16px;
     border-radius: 5px;
+
     border: 1px solid #ccc;
   }
   
@@ -343,6 +342,110 @@ footer {
     background-color: #007bff83;
 
   }
+  @media (max-width: 768px) {
+    .corpo_info {
+      display: grid;
+      width: 100%;
+    }
+
+    .linha-cabecalho {
+      display: flex;
+    }
+
+    .carrinho-container h1 {
+      padding: 2px;
+      color: black;
+      display: flex;
+      justify-content: center;
+    }
+
+    .carrinho-container h2 {
+      padding: 2px;
+      color: black;
+    }
+    
+    
+    .carrinho-container h4 {
+      font-size: 15px;
+      color: rgb(241, 241, 241);
+      display: flex;
+      justify-content: center;
+      background-color: #2f2f2f;
+      padding: 20px;
+    }
+
+    .corpo-carrinho {
+      flex-direction: column;
+  
+    }
+
+    .carrinho-container {
+      width: 100%;
+      margin: 40px auto;
+      font-family: Arial, sans-serif;
+    }
+    .corpo-carrinho {
+      margin-top: 5rem;
+      display: flex;
+    }
+    
+    .tabela-carrinho {
+      border-top: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .container {
+      width: 100%;
+    }
+
+
+    .itens-carrinho {
+      min-height: 150px;
+      padding: 20px 10px;
+      background-color: #f9f9f9;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header {
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header {
+        display: flex;
+        padding: 15px;
+        align-items: center;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 
 
 /* Rodape */
