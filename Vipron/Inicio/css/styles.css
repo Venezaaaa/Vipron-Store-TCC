@@ -3,11 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(180deg, #0A0C10, #10131A, #0A0C10);
-    
+    background: linear-gradient(to bottom, #f0f4f8, #d8e2e7); /* Gradiente suave do topo para baixo */
+    color: #333;
 }
 
 /* Cabeçalho */
@@ -42,6 +41,25 @@ header.scrolled {
 .logo img {
     width: 70px;
 }
+
+.bt-cadastro {
+    background: linear-gradient(135deg, #6f2cff, #b366ff);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(111, 44, 255, .7), 0 0 22px rgba(179, 102, 255, .6);
+}
+
+.bt-cadastro:hover {
+    background: linear-gradient(135deg, #b366ff, #6f2cff);
+    transform: scale(1.08);
+    box-shadow: 0 0 14px rgba(111, 44, 255, .9), 0 0 30px rgba(179, 102, 255, .9);
+}
+
 
 /* Navegação */
 nav ul {
@@ -126,23 +144,6 @@ footer {
 }
 
 /* NOVO CADASTRO LENDÁRIO */
-.bt-cadastro {
-    background: linear-gradient(135deg, #6f2cff, #b366ff);
-    padding: 10px 20px;
-    border-radius: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(111, 44, 255, .7), 0 0 22px rgba(179, 102, 255, .6);
-}
-
-.bt-cadastro:hover {
-    background: linear-gradient(135deg, #b366ff, #6f2cff);
-    transform: scale(1.08);
-    box-shadow: 0 0 14px rgba(111, 44, 255, .9), 0 0 30px rgba(179, 102, 255, .9);
-}
 
 /* Notificação */
 .toast {
@@ -443,7 +444,7 @@ footer {
     justify-content: center;
 }
 .h1{
-    color: wheat;
+    color: rgb(0, 0, 0);
     display: flex;
     text-align: center;
     justify-content: center;
