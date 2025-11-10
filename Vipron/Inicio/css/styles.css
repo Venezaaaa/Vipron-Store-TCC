@@ -16,12 +16,10 @@ header {
     justify-content: space-between;
     padding: 18px 30px;
     align-items: center;
-    
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-
     backdrop-filter: blur(15px);
     background: rgba(0,0,0,.55);
     border-bottom: 1px solid rgba(0, 119, 255, 0.2);
@@ -32,9 +30,9 @@ header.scrolled {
     background: rgba(0,0,0,.85);
 }
 .logo {
-    background-color: rgba(255, 255, 255, 0.486);
     padding: 8px 0px 2px;
     margin-left: 5%;
+    margin-right: 5%;
     border-radius: 20px ;
 }
 
@@ -163,38 +161,6 @@ footer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
-/* Banner */
-.banner {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #1c1c1c;
-    color: #f1f1f1;
-    font-size: 45px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.banner h2 { font-size: 40px; margin-bottom: 10px; }
-.banner p { font-size: 22px; margin-bottom: 20px; }
-
-.btn-shop {
-    background-color: #007bff;
-    color: #f1f1f1;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 18px;
-    text-decoration: none;
-    display: inline-block;
-    transition: 0.8s;
-}
-
-.btn-shop:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
-}
-
-
-
 /* Botões */
 .btn-info, .btn-carrinho, .add-to-cart {
     color: white;
@@ -279,6 +245,13 @@ footer {
 
 .produto h3 { margin-top: 20px; font-size: 20px; font-weight: 600; }
 .produto p { margin: 10px 0; color: #007bff; }
+
+.produtos_info{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
 
 /* Carrossel */
 .slider {
@@ -456,18 +429,21 @@ footer {
     margin-right: 5%;
 }
 
-.produtos_info{
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
+
 
 
 
 
 /* Responsividade */
 @media (max-width: 768px) {
+    .logo{ 
+        width: 15%;
+    }
+
+    .logo img{ 
+        width: 3rem;
+    }
+
     .produtos, .produtos_top {
         gap: 10px;
     }
@@ -520,6 +496,7 @@ footer {
         font-size: 14px;
     }
 
+
     footer {
         flex-direction: column;
         gap: 15px;
@@ -533,6 +510,7 @@ footer {
         justify-content: center;
         gap: 0px;
     }
+    
 
     /* 3 produtos por linha */
     .produto {

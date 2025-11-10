@@ -306,39 +306,207 @@ nav ul li a:hover {
     margin-right: 200px;
 }
 
-/* Footer */
+/* Rodapé */
 footer {
-    background-color: #2f2f2f; /* Fundo escuro para o rodapé */
-    color: #ffffff;
-    font-size: 14px;
-    height: auto;
-    width: 100%;
-    padding: 20px 0;
+    background-color: #2f2f2f;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-footer p {
-    margin-left: 4%;
+.footer-section {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
     font-size: 18px;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    border-radius: 50px;
-    padding: 15px 20px;
-    width: 33%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-footer a {
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #ccc;
     text-decoration: none;
-    background-color: #000000;
-    color: white;
-    margin: 50px 12px 50px;
-    margin-left: 5%;
-    padding: 10px 20px;
-    border-radius: 30px;
-
+    transition: 0.3s;
 }
 
-footer h1 {
-    margin-left: 5%;
-    margin-top: 0px;
+.footer-section a:hover {
+    color: #fff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+
+    .logo{ 
+        width: 15%;
+    }
+
+    .logo img{ 
+        width: 3rem;
+    }
+
+    .produtos, .produtos_top {
+        gap: 10px;
+    }
+
+    .produto {
+        flex: 1 1 30%;
+        max-width: 30%;
+    }
+
+    .produto h3 {
+        font-size: 18px;
+    }
+    .produto img {
+        width: 100%;
+    }
+
+    .produto p {
+        font-size: 14px;
+    }
+
+    .botoes-produto {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 8px;
+    }
+
+    .add-to-cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #005fc5;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px 12px 10px;
+        gap: 8px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .produtos, .produtos_top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0px;
+    }
+    
+    .categorias {
+        width: 100%;
+        height: 2rem;
+    }
+    .section_categoria {
+        display: flex;
+        justify-content: center;
+        width: 16.66%;
+        height: 2rem;
+    }
+    .section_categoria a h1 { 
+        font-size: 0.5rem;
+    }
+
+    /* 3 produtos por linha */
+    .produto {
+        flex: 1 1 calc(33% - 20px);
+        max-width: calc(33% - 20px);
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .produto h3 {
+        font-size: 12px;
+    }
+
+    .produto p {
+        font-size: 12px;
+    }
+
+    /* Botões lado a lado */
+    .botoes-produto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0px;
+    }
+
+    /* Ícone do carrinho no botão */
+
+
+    .add-to-cart img {
+        width: 22px;
+        height: 22px;
+    }
+    .produtos button img{
+        width: 15px;
+    }
+
+
+    .btn-info {
+        width: 50px;
+        font-size: 8px;
+    }
+
+    .ver-detalhes {
+        background-color: #1a1a1a;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .ver-detalhes:hover {
+        background-color: #333;
+    }
+
+    header {
+        display: flex;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
