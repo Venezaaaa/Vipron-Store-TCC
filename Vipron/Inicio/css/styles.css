@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +6,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #f0f4f8, #d8e2e7);
-    color: #333;
+    background: linear-gradient(180deg, #0A0C10, #10131A, #0A0C10);
+    
 }
 
 /* Cabeçalho */
@@ -16,20 +15,32 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 18px 30px;
     align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: 0.5s;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,.55);
+    border-bottom: 1px solid rgba(0, 119, 255, 0.2);
+    transition: .3s;
+}
+
+header.scrolled {
+    background: rgba(0,0,0,.85);
 }
 .logo {
-    width: 20%;
+    background-color: rgba(255, 255, 255, 0.486);
+    padding: 8px 0px 2px;
     margin-left: 5%;
+    border-radius: 20px ;
 }
 
 .logo img {
-    width: 50px;
+    width: 70px;
 }
 
 /* Navegação */
@@ -43,7 +54,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: linear-gradient(135deg, #eae1fdfa, #cacaca);
     font-weight: 500;
     font-size: 16px;
     transition: 0.8s;
@@ -114,8 +125,9 @@ footer {
     color: #fff;
 }
 
+/* NOVO CADASTRO LENDÁRIO */
 .bt-cadastro {
-    background-color: #000;
+    background: linear-gradient(135deg, #6f2cff, #b366ff);
     padding: 10px 20px;
     border-radius: 20px;
     color: #fff;
@@ -123,10 +135,13 @@ footer {
     font-weight: bold;
     letter-spacing: 1px;
     transition: 0.3s;
+    box-shadow: 0 0 10px rgba(111, 44, 255, .7), 0 0 22px rgba(179, 102, 255, .6);
 }
 
 .bt-cadastro:hover {
-    background-color: #333;
+    background: linear-gradient(135deg, #b366ff, #6f2cff);
+    transform: scale(1.08);
+    box-shadow: 0 0 14px rgba(111, 44, 255, .9), 0 0 30px rgba(179, 102, 255, .9);
 }
 
 /* Notificação */
@@ -428,6 +443,7 @@ footer {
     justify-content: center;
 }
 .h1{
+    color: wheat;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -445,8 +461,6 @@ footer {
     margin-top: 10%;
     margin-bottom: 10%;
 }
-
-
 
 
 
@@ -597,5 +611,3 @@ footer {
 .conteudo h1 {
     color: white;
 }
-
-
