@@ -12,6 +12,9 @@ function adicionarCarrinho(nome, preco, imagem) {
   localStorage.setItem("carrinho", JSON.stringify(carrinho));
   atualizarBadgeCarrinho();
   mostrarToast(`${nome} adicionado ao carrinho!`);
+
+  // === Animação: imagem voando até o carrinho ===
+  animarImagemParaCarrinho(imagem, nome);
 }
 
 // --- Renderiza os itens do carrinho ---
@@ -52,6 +55,55 @@ function renderCarrinho() {
 
   totalEl.textContent = `Total: R$ ${total.toFixed(2)}`;
 }
+
+// --- Função: animação da imagem voando até o carrinho ---
+function animarImagemParaCarrinho(srcImagem, nomeProduto) {
+  const iconeCarrinho = document.querySelector('.cart-icon img');
+  if (!iconeCarrinho) return;
+
+  // pega a imagem do produto correspondente
+  const produtoImg = [...document.querySelectorAll('.produto img')]
+    .find(img => img.alt === nomeProduto);
+  if (!produtoImg) return;
+
+  const produtoRect = produtoImg.getBoundingClientRect();
+  const carrinhoRect = iconeCarrinho.getBoundingClientRect();
+
+  // cria clone da imagem do produto
+  const imgClone = produtoImg.cloneNode(true);
+  imgClone.classList.add('img-voando');
+  document.body.appendChild(imgClone);
+
+  // define posição inicial
+  imgClone.style.left = `${produtoRect.left}px`;
+  imgClone.style.top = `${produtoRect.top}px`;
+  imgClone.style.width = `${produtoRect.width}px`;
+  imgClone.style.height = `${produtoRect.height}px`;
+
+  // força o reflow
+  getComputedStyle(imgClone).transform;
+
+  // movimento até o carrinho
+  imgClone.style.transform = `
+    translate(${carrinhoRect.left - produtoRect.left}px, 
+              ${carrinhoRect.top - produtoRect.top - 50}px)
+    scale(0.1)
+  `;
+  imgClone.style.opacity = '0.3';
+
+  // remove o clone e balança o carrinho
+  setTimeout(() => {
+    imgClone.remove();
+    iconeCarrinho.classList.add('balancar');
+    setTimeout(() => iconeCarrinho.classList.remove('balancar'), 600);
+  }, 3000);
+}
+
+
+
+
+
+
 
 // --- Alterar quantidade de um item ---
 function alterarQuantidade(index, delta) {
@@ -173,33 +225,6 @@ function nextImage() {
 
     document.getElementById("radio"+ count).checked = true;
 }
-// Função para adicionar produto ao carrinho
-function addToCart(product, price, image) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingProduct = cart.find(item => item.product === product);
-
-    if (existingProduct) {
-        existingProduct.quantity += 1;
-    } else {
-        cart.push({ product, price: parseFloat(price), image, quantity: 1 });
-    }
-
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartBadge();
-    showToast(`${product} adicionado ao carrinho!`);
-}
-
-// Função para atualizar o badge do carrinho
-function updateCartBadge() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const badge = document.querySelector('.cart-badge');
-
-    if (badge) {
-        badge.textContent = totalItems;
-        badge.style.display = totalItems > 0 ? 'inline-block' : 'none';
-    }
-}
 
 // Função para mostrar toast de notificação
 function showToast(message) {
@@ -225,3 +250,23 @@ document.querySelectorAll('.carrinho-btn').forEach(button => {
         addToCart(product, price, image);
     });
 });
+
+  const TEMPO_INICIAL = (15 * 24 * 60 * 60) + (2 * 60 * 60) + (35 * 60) + 28;
+  let tempoRestante = TEMPO_INICIAL;
+
+  function atualizarContador() {
+    const dias = Math.floor(tempoRestante / (24 * 60 * 60));
+    const horas = Math.floor((tempoRestante % (24 * 60 * 60)) / 3600);
+    const minutos = Math.floor((tempoRestante % 3600) / 60);
+    const segundos = tempoRestante % 60;
+
+    document.getElementById('contador').textContent =
+      `${dias}D ${horas.toString().padStart(2, '0')}H ` +
+      `${minutos.toString().padStart(2, '0')}M ${segundos.toString().padStart(2, '0')}S`;
+
+    tempoRestante--;
+    if (tempoRestante < 0) tempoRestante = TEMPO_INICIAL;
+  }
+
+  setInterval(atualizarContador, 1000);
+  atualizarContador();

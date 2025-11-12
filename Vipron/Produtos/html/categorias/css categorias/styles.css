@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 /* Cor de fundo */
@@ -16,55 +17,47 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 20px;
     align-items: center;
-    padding: 25px;
-    background-color: #f1f1f1;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: 0.5s;
-    border-bottom: 1px solid #000000;
-    margin-bottom: 2%;
+}
+.logo {
+    padding: 8px 0px 2px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px ;
 }
 
-header img{
-    width: 20px;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
+.logo img {
+    width: 70px;
 }
 
-header .logo h1 {
-    font-size: 24px;
-    font-weight: 600;
-}
-
-.cart-icon {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .cart-icon img {
-    width: 28px; /* ou o tamanho que preferir */
-    height: auto;
-  }
-  
-  .cart-badge {
-    position: absolute;
-    top: -6px;   /* sobe a bolinha */
-    right: -6px; /* move para o canto direito */
-    background-color: red;
-    color: white;
-    font-size: 12px;
+.bt-cadastro {
+    background: linear-gradient(135deg, #6f2cff, #b366ff);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-transform: uppercase;
     font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 6px;
-    line-height: 1;
-  }
-  
+    letter-spacing: 1px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(111, 44, 255, .7), 0 0 22px rgba(179, 102, 255, .6);
+}
+
+.bt-cadastro:hover {
+    background: linear-gradient(135deg, #b366ff, #6f2cff);
+    transform: scale(1.08);
+    box-shadow: 0 0 14px rgba(111, 44, 255, .9), 0 0 30px rgba(179, 102, 255, .9);
+}
 
 /* Navegação */
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
+    gap: 25px;
     gap: 20px;
     width: 100%;
 }
@@ -80,14 +73,29 @@ nav ul li a {
 nav ul li a:hover {
     color: #007bff;
     transform: scale(1.1);
-}f
+}
 
-/* Botão de cadastro */
-.bt-cadastro {
-    background-color: #000000;
-    padding: 8px 8px;
-    border-radius: 25px;
-    color: #ffffff;
+/* Ícone do carrinho */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon img {
+    width: 28px;
+    height: auto;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
 }
 
 /* Banner */
@@ -156,52 +164,77 @@ nav ul li a:hover {
     color: #007bff;
 }
 
-/* Alinhamento dos botões */
-.alinha-btn {
+/* Botões */
+.btn-info, .btn-carrinho, .carrinho-btn {
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;   
+}
+
+.alinha-btn{
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
-    margin: 10px 0;
-    background-color: #ffffff;
-}
-
-/* Botão de comprar */
-.compra-btn button {
-    background-color: #007BFF;
-    color: #ffffff;
-    border: none;
-    padding: 15px 20px;
     text-align: center;
-    cursor: pointer;
-    border-radius: 50px;
-    font-size: 16px;
-    transition: 0.5s;
+    gap: 20px;
 }
-
-.compra-btn button:hover {
-    background-color: #b4b4b4;
-}
-
-/* Botão de adicionar ao carrinho */
-.carrinho-btn button {
-    background-color: rgba(0, 0, 0, 0.301);
-    padding: 5px 10px;
-    cursor: pointer;
+.btn-info {
+    background-color: #1a1a1a;
+    color: white;
     border: none;
-    border-radius: 50px;
-    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
     transition: 0.3s;
 }
 
-.carrinho-btn button img {
-    width: 2rem;
-    height: auto;
+.btn-info:hover {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+}
+
+.carrinho-btn {
+    background-color: #d4d4d4;
+    padding: 10px 8px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.507);
+    width: 28%;
 }
 
 .carrinho-btn:hover {
-    transform: scale(1.05);
+    background-color: #949494ab;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    
+}
+.produto button img{
+    width: 80%;
+}
+   
+/* Notificação */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 /* Anúncio */
 .anuncio1 {
     width: 100%;

@@ -40,6 +40,84 @@ header.scrolled {
     width: 70px;
 }
 
+/* SEÇÃO QUEIMA DE ESTOQUE */
+.queima-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 40px auto 0;
+  max-width: 1200px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.queima-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(270deg, #ff6a00, #ff9b00, #ff6a00);
+  background-size: 400% 400%;
+  animation: gradiente 6s ease infinite;
+  z-index: 1;
+}
+
+@keyframes gradiente {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.queima-conteudo {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+
+.queima-conteudo h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.queima-conteudo p {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.contador {
+  background: #000000;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+/* FUNDO DOS PRODUTOS DA QUEIMA */
+.queima-produtos-fundo {
+  background: linear-gradient(180deg, #000000 0%, #f8c0ff 100%);
+  border-radius: 16px;
+  margin: 0 auto 60px;
+  padding: 30px 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.61);
+}
+
+.queima-produtos-fundo h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: 800;
+}
+
+
+
 .bt-cadastro {
     background: linear-gradient(135deg, #6f2cff, #b366ff);
     padding: 10px 20px;
@@ -70,8 +148,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: linear-gradient(135deg, #eae1fdfa, #cacaca);
-    font-weight: 500;
+    color: white;
     font-size: 16px;
     transition: 0.8s;
 }
@@ -141,7 +218,30 @@ footer {
     color: #fff;
 }
 
-/* NOVO CADASTRO LENDÁRIO */
+/* Imagem que voa até o carrinho */
+.img-voando {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1), opacity 2s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transform-origin: center center;
+}
+
+/* Efeito de balanço no carrinho */
+.cart-icon img.balancar {
+  animation: shake 0.6s ease;
+}
+
+@keyframes shake {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-10deg); }
+  50% { transform: scale(1.1) rotate(10deg); }
+  75% { transform: scale(1.1) rotate(-10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
 
 /* Notificação */
 .toast {
@@ -162,47 +262,53 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 /* Botões */
-.btn-info, .btn-carrinho, .add-to-cart {
+.compra-btn, .btn-carrinho, .carrinho-btn {
     color: white;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;   
 }
 
-.btn-info {
-    background-color: #007bff;
-    padding: 10px 8px;
+.botoes-produto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+.compra-btn {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.btn-info:hover {
-    background-color: #0056b3;
-    transform: scale(1.005);
+.compra-btn:hover {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
 
-.btn-carrinho {
-    background-color: #838383;
+.carrinho-btn {
+    background-color: #d4d4d4;
     padding: 10px 8px;
     margin-top: 5px;
-}
-
-.add-to-cart {
     border: none;
     border-radius: 25px;
     cursor: pointer;
     margin-top: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 20%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.507);
+    width: 28%;
 }
 
-.botoes-produto{
-    display: flex;
-    gap: 20px;
-}
-
-.add-to-cart:hover {
-    background-color: #bbbbbbab;
+.carrinho-btn:hover {
+    background-color: #949494ab;
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    
 }
 .produto button img{
     width: 80%;
@@ -235,7 +341,7 @@ footer {
 
 .produto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.692);
 }
 
 .produto img {
@@ -251,7 +357,9 @@ footer {
     justify-content: space-evenly;
     margin-top: 10%;
     margin-bottom: 10%;
+    width: 100%;
 }
+
 
 /* Carrossel */
 .slider {
@@ -324,8 +432,9 @@ footer {
 }
 
 .navegation-auto div {
-    border: 1px solid black;
+    border: 1px solid #000000;
     padding: 0.3%;
+    margin-top: 10%;
     border-radius: 10px;
     cursor: pointer;
     transition: 1s;
@@ -333,7 +442,7 @@ footer {
 
 .navegation-auto {
     position: absolute;
-    margin-top: 10%;
+    width: 90%;
     display: flex;
     justify-content: center;
 }
@@ -439,7 +548,6 @@ footer {
     .logo{ 
         width: 15%;
     }
-
     .logo img{ 
         width: 3rem;
     }
@@ -464,7 +572,7 @@ footer {
         font-size: 14px;
     }
 
-    .botoes-produto {
+    .-produto {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -472,7 +580,7 @@ footer {
         margin-top: 8px;
     }
 
-    .add-to-cart {
+    .carrinho-btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -501,6 +609,59 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
+      .queima-container {
+    height: 140px;
+    max-width: 95%;
+    margin: 25px auto;
+    border-radius: 10px;
+  }
+
+  .queima-conteudo h2 {
+    font-size: 1.8rem;
+  }
+
+  .queima-conteudo p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .contador {
+    font-size: 1rem;
+    padding: 10px 18px;
+  }
+
+  .queima-produtos-fundo {
+    padding: 20px 10px;
+    max-width: 95%;
+    border-radius: 12px;
+  }
+
+  .queima-produtos-fundo h1 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .queima-produtos-fundo .produtos_top {
+    gap: 15px;
+  }
+
+  .queima-produtos-fundo .produto {
+    width: 45%;
+    padding: 10px;
+  }
+
+  .queima-produtos-fundo .produto h3 {
+    font-size: 14px;
+  }
+
+  .queima-produtos-fundo .produto p {
+    font-size: 13px;
+  }
+
+  .queima-produtos-fundo .compra-btn {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -533,40 +694,40 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 0px;
+        gap: 5px;
     }
 
     /* Ícone do carrinho no botão */
 
-
-    .add-to-cart img {
-        width: 22px;
-        height: 22px;
+    .carrinho-btn img {
+        width: 50%;
     }
     .produtos button img{
         width: 15px;
     }
+.carrinho-btn {
+    margin-bottom: 10px;
+}
 
 
-    .btn-info {
-        width: 50px;
-        font-size: 8px;
-    }
+.compra-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    width: 60px;
+    font-size: 9px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    .ver-detalhes {
-        background-color: #1a1a1a;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
 
-    .ver-detalhes:hover {
-        background-color: #333;
-    }
+
 
     header {
         display: flex;
@@ -585,6 +746,75 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
+    .queima-container {
+    height: 110px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px auto;
+  }
+
+  .queima-conteudo h2 {
+    font-size: 1.4rem;
+  }
+
+  .queima-conteudo p {
+    font-size: 0.9rem;
+  }
+
+  .contador {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+
+  .queima-produtos-fundo {
+    padding: 15px 8px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
+
+  .queima-produtos-fundo h1 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .queima-produtos-fundo .produtos_top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  /* 2 produtos por linha no mobile */
+  .queima-produtos-fundo .produto {
+    width: 48%;
+    max-width: 48%;
+    padding: 8px;
+    border-radius: 10px;
+  }
+
+  .queima-produtos-fundo .produto img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .queima-produtos-fundo .produto h3 {
+    font-size: 12px;
+  }
+
+  .queima-produtos-fundo .produto p {
+    font-size: 11px;
+  }
+
+  .queima-produtos-fundo .compra-btn,
+  .queima-produtos-fundo .carrinho-btn {
+    font-size: 8px;
+    padding: 5px 8px;
+  }
+
+  .queima-produtos-fundo .carrinho-btn img {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 .conteudo h1 {

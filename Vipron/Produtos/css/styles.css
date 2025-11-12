@@ -138,20 +138,6 @@ footer {
 .footer-section a:hover {
     color: #fff;
 }
-.bt-cadastro {
-    background-color: #000;
-    padding: 10px 20px;
-    border-radius: 25px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.bt-cadastro:hover {
-    background-color: #333;
-}
 
 /* Notificação */
 .toast {
@@ -171,53 +157,6 @@ footer {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
-/* Banner */
-.banner {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #000;
-    color:#f1f1f1;
-    font-size: 40px;
-}
-
-.banner h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.banner p {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.btn-shop {
-    background-color: #007bff;
-    color: #f1f1f1;
-    padding: 15px 40px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 18px;
-    display: inline-block;
-    transition: 0.8s;
-}
-
-.btn-shop:hover {
-    background-color: #a7a7a7;
-    transform: (1.1);
-}
-
-/*   */
-.produtos {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: space-around;
-    gap: 15px;
-    margin-left: 5%;
-    margin-right: 5%;
-    width: 90%;
-    background-color: rgb(243, 243, 243);;
-}
-
 .produtos2 {
     padding: 40px 20px;
     display: flex;
@@ -227,22 +166,32 @@ footer {
     margin-right: 5%;
     background-color: black;
 }
+/* Produtos */
+.produtos, .produtos_top {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 .produto {
     text-align: center;
-    text-decoration: none;
-    width: 15%;
-    gap: 10px;
-    background-color: #ffffff;
+    background-color: #fff;
     transition: 0.5s;
-    align-items: center; 
     border-radius: 10px;
-    margin-left: 5px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.185);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    flex: 1 1 200px;
+    max-width: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .produto:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -254,19 +203,101 @@ footer {
 .produto h3 { margin-top: 20px; font-size: 20px; font-weight: 600; }
 .produto p { margin: 10px 0; color: #007bff; }
 
-.produto button {
-    background-color: #28a745;
-    color: rgb(255, 255, 255);
-    padding: 12px 30px;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    transition: 0.5s;
+.produtos_info{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 100%;
 }
 
-.produto button:hover {
-    background-color: #b4b4b4;
+/* ==========================
+   BOTÕES GERAIS
+========================== */
+.btn-info,
+.btn-carrinho,
+.carrinho-btn button,
+.compra-btn button {
+    color: white;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+/* ==========================
+   ALINHAMENTO DE BOTÕES
+========================== */
+.botoes-produto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+/* ==========================
+   BOTÃO DE COMPRA
+========================== */
+.compra-btn button {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+.compra-btn button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* ==========================
+   BOTÃO DE CARRINHO
+========================== */
+.carrinho-btn button {
+    background-color: #d4d4d4;
+    color: #000;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carrinho-btn button:hover {
+    background-color: #bdbdbd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Ícone dentro do botão de carrinho */
+.carrinho-btn img {
+    width: 80%;
+    vertical-align: middle;
+}
+
+/* ==========================
+   OUTROS BOTÕES GENÉRICOS
+========================== */
+.btn-info {
+    background-color: #007bff;
+    padding: 10px 20px;
+}
+
+.btn-info:hover {
+    background-color: #0069d9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================
+   ANIMAÇÕES E TRANSIÇÕES
+========================== */
+button {
+    transition: all 0.3s ease;
+}
+
 
 /* Estilo para categorias */
 .categorias {
@@ -360,23 +391,6 @@ footer {
     margin-bottom: 20px;
 }
 
-.btn_oferta {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: 0.5s;
-}
-
-.btn_oferta:hover {
-    background-color: #c7e2ff;
-    transform: scale(1.1);
-}
-
 /* Anúncios */
 .anuncio1 {
     display: flex;
@@ -420,27 +434,6 @@ footer {
     text-decoration: none;
 }
 
-/* Carrinho e Botões */
-.carrinho-btn button {
-    background-color: rgba(0, 0, 0, 0.301);
-    padding: 15px 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.carrinho-btn:hover {
-    transform: scale(1.05);
-}
-
-.compra-btn button {
-    background-color: #007BFF;
-    color: #ffffff;
-    border: none;
-    padding: 15px 20px;
-    text-align: center;
-    cursor: pointer;
-}
-
 
 .infos {
     width: 12%;
@@ -461,32 +454,7 @@ footer {
     background-color: #F5F7FF;
 }
 
-.alinha-btn {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin: 0;
-    background-color: #ffffff;
-}
 
-.carrinho-btn img {
-    width: 1rem;
-}
-
-.btn-info, .btn-carrinho {
-    color: #f1f1f1;
-    padding: 10px 8px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-size: 15px;
-    display: inline-block;
-    transition: 0.8s;
-}
-
-.btn-info:hover, .btn-carrinho:hover {
-    background-color: #a7a7a7;
-    transform: (1.1);
-}
 .section-anuncio-1 {
     width: 100%;
     margin: 0px;
