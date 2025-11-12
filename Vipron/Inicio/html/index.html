@@ -466,6 +466,39 @@
             </div>
         </footer>
     </section>
+    <script>
+  // === CONTADOR DE QUEIMA DE ESTOQUE ===
+  function iniciarContador() {
+    // Define uma data-alvo (exemplo: 5 dias a partir de agora)
+    const fim = new Date();
+    fim.setDate(fim.getDate() + 5);
+
+    function atualizarContador() {
+      const agora = new Date().getTime();
+      const distancia = fim - agora;
+
+      if (distancia < 0) {
+        document.getElementById("contador").innerHTML = "⏰ Promoção Encerrada!";
+        clearInterval(intervalo);
+        return;
+      }
+
+      const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+      const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+      document.getElementById("contador").innerHTML = 
+        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+    }
+
+    const intervalo = setInterval(atualizarContador, 1000);
+    atualizarContador(); // Atualiza imediatamente
+  }
+
+  document.addEventListener("DOMContentLoaded", iniciarContador);
+</script>
+
 
   <script src="../../Carrinho/css/script.js"></script>
 </body>

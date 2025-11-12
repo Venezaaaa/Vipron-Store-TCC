@@ -1,185 +1,155 @@
+/* ======= RESET E BASE ======= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-/* Cor de fundo */
 body {
-    font-family: 'Poppins', sans-serif;
-    color: #000000;
-    margin: 0px;
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+  background-color: #f1f1f1;
 }
 
-/* Cabeçalho */
+/* ======= HEADER ======= */
 header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: 0.5s;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
-.logo {
-    padding: 8px 0px 2px;
-    margin-left: 5%;
-    margin-right: 5%;
-    border-radius: 20px ;
-}
-
 .logo img {
-    width: 70px;
+  width: 70px;
 }
-
-.bt-cadastro {
-    background: linear-gradient(135deg, #6f2cff, #b366ff);
-    padding: 10px 20px;
-    border-radius: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(111, 44, 255, .7), 0 0 22px rgba(179, 102, 255, .6);
-}
-
-.bt-cadastro:hover {
-    background: linear-gradient(135deg, #b366ff, #6f2cff);
-    transform: scale(1.08);
-    box-shadow: 0 0 14px rgba(111, 44, 255, .9), 0 0 30px rgba(179, 102, 255, .9);
-}
-
-/* Navegação */
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-    gap: 20px;
-    width: 100%;
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
-
 nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 16px;
-    transition: 0.8s;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
 }
-
 nav ul li a:hover {
-    color: #007bff;
-    transform: scale(1.1);
+  color: #007bff;
+  transform: scale(1.05);
+}
+.bt-cadastro {
+  background: linear-gradient(135deg, #6f2cff, #b366ff);
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(111, 44, 255, 0.6);
+}
+.bt-cadastro:hover {
+  background: linear-gradient(135deg, #b366ff, #6f2cff);
+  transform: scale(1.08);
 }
 
-/* Ícone do carrinho */
+/* ======= CARRINHO ======= */
 .cart-icon {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
-
 .cart-icon img {
-    width: 28px;
-    height: auto;
+  width: 28px;
 }
-
 .cart-badge {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 6px;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
 }
 
-/* Banner */
-.banner {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #000;
-    color: #f1f1f1;
-    font-size: 40px;
-    border-radius: 50px;
-    box-shadow: 0 2px 40px rgb(0, 0, 0);
+/* ======= BANNER / OFERTA ======= */
+.oferta_especial {
+  background-color: #f1f1f1;
+  text-align: center;
+  margin: 40px 5%;
+  padding: 60px 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.oferta_especial .banner h1 {
+  font-size: 2rem;
+  color: #000;
+}
+.oferta_especial .banner h2 {
+  font-size: 1.4rem;
+  color: #007bff;
+  margin-top: 10px;
 }
 
-.banner h2 {
-    font-size: 40px;
-    margin-bottom: 10px;
+/* ======= CARROSSEL DE PRODUTOS ======= */
+.produtos-carrossel-container {
+  margin: 50px 5%;
+  position: relative;
+  padding: 20px 0;
+}
+.produtos-carrossel-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.produtos-carrossel {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
 }
 
-.banner p {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-/* Produtos */
-.produtos {
-    padding: 40px 20px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 40px;
-    background-color: #f1f1f1;
-    margin: auto;
-}
-
+/* ======= PRODUTO ======= */
 .produto {
-    text-align: center;
-    text-decoration: none;
-    width: 280px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    transition: 0.8s;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 15px;
+  min-width: 260px;
+  flex-shrink: 0;
+  transition: 0.3s;
 }
-
 .produto:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.89);
-    color: #57778a;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
-
 .produto img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+  width: 100%;
+  border-radius: 8px;
 }
-
 .produto h3 {
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: 600;
+  font-size: 18px;
+  margin: 15px 0 5px;
 }
-
 .produto p {
-    margin: 10px 0;
-    font-size: 18px;
-    color: #007bff;
+  color: #007bff;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
-/* Botões */
-.btn-info, .btn-carrinho, .carrinho-btn {
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: 0.3s;   
+/* ======= BOTÕES ======= */
+.alinha-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
 }
-
-.alinha-btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 20px;
-}
-.btn-info {
+.compra-btn button {
     background-color: #1a1a1a;
     color: white;
     border: none;
@@ -190,7 +160,7 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
-.btn-info:hover {
+.compra-btn:hover {
     background-color: #333;
     box-shadow: 0 4px 8px rgb(0, 0, 0);
 }
@@ -214,176 +184,71 @@ nav ul li a:hover {
     
 }
 .produto button img{
-    width: 80%;
+    width: 100%;
 }
-   
-/* Notificação */
-.toast {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-/* Anúncio */
 .anuncio1 {
     width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f1f1f1;
 }
-
-/* Corpo dos anúncios */
-.corpo_anuncios {
-    align-items: center;
-    margin-left: 200px;
-    margin-right: 200px;
-    gap: 40px;
-    background-color: #f1f1f1;
-}
-
-/* Categorias */
-.categorias {
-    align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
-    display: flex;
-    background-color: #f1f1f1;
-}
-
-.section_categoria {
-    background-color: #f1f1f1;
-    text-align: center;
-    width: 200px;
-    padding: 11px 4px 4px;
-    border-radius: 90px;
-    transition: 0.6s;
-    margin: auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.800);
-}
-
-.section_categoria:hover {
-    transform: scale(0.8);
-}
-
-.section {
-    display: flex;
-    background-color: #007bff;
-}
-
-/* Carrossel de produtos */
-.produtos-carrossel-container {
-    max-width: 80%;
-    margin: 60px auto;
-    position: relative;
-    padding: 20px;
-}
-
-.titulo-secao {
-    font-size: 26px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.produtos-carrossel-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.produtos-carrossel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 20px;
-}
-
+/* ======= BOTÕES DO CARROSSEL ======= */
 .btn-carrossel {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 10;
-    border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: 0.3s;
 }
-
+.btn-carrossel:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
 .anterior {
-    left: 0;
+  left: 0;
 }
-
 .proximo {
-    right: 0;
+  right: 0;
 }
 
-/* Oferta especial */
-.oferta_especial {
-    background-color: #f1f1f1;
-    padding: 30px;
-    text-align: center;
-    margin-left: 200px;
-    margin-right: 200px;
-}
-
-/* Rodapé */
+/* ======= RODAPÉ ======= */
 footer {
-    background-color: #2f2f2f;
-    color: #fff;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
+  background-color: #2f2f2f;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-
 .footer-section {
-    flex: 1 1 200px;
-    text-align: center;
+  text-align: center;
 }
-
 .footer-section h3 {
-    margin-bottom: 15px;
-    font-size: 18px;
+  margin-bottom: 10px;
 }
-
-.footer-section p,
 .footer-section a {
-    font-size: 14px;
-    margin: 5px 0;
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
 }
-
-.footer-section a {
-    color: #ccc;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
 .footer-section a:hover {
-    color: #fff;
+  color: #fff;
 }
 
-/* Responsividade */
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 992px) {
+  .produto {
+    min-width: 220px;
+  }
+}
 @media (max-width: 768px) {
-
-
     .logo{ 
         width: 15%;
     }
-
     .logo img{ 
         width: 3rem;
     }
@@ -408,7 +273,7 @@ footer {
         font-size: 14px;
     }
 
-    .botoes-produto {
+    .-produto {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -416,7 +281,7 @@ footer {
         margin-top: 8px;
     }
 
-    .add-to-cart {
+    .carrinho-btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -446,100 +311,19 @@ footer {
         gap: 15px;
     }
 }
-
 @media (max-width: 480px) {
-    .produtos, .produtos_top {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0px;
-    }
-    
-    .categorias {
-        width: 100%;
-        height: 2rem;
-    }
-    .section_categoria {
-        display: flex;
-        justify-content: center;
-        width: 16.66%;
-        height: 2rem;
-    }
-    .section_categoria a h1 { 
-        font-size: 0.5rem;
-    }
-
-    /* 3 produtos por linha */
-    .produto {
-        flex: 1 1 calc(33% - 20px);
-        max-width: calc(33% - 20px);
-        box-sizing: border-box;
-        margin-bottom: 10px;
-    }
-
-    .produto h3 {
-        font-size: 12px;
-    }
-
-    .produto p {
-        font-size: 12px;
-    }
-
-    /* Botões lado a lado */
-    .botoes-produto {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0px;
-    }
-
-    /* Ícone do carrinho no botão */
-
-
-    .add-to-cart img {
-        width: 22px;
-        height: 22px;
-    }
-    .produtos button img{
-        width: 15px;
-    }
-
-
-    .btn-info {
-        width: 50px;
-        font-size: 8px;
-    }
-
-    .ver-detalhes {
-        background-color: #1a1a1a;
-        color: white;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    .ver-detalhes:hover {
-        background-color: #333;
-    }
-
-    header {
-        display: flex;
-        padding: 15px;
-    }
-
-    nav ul {
-        gap: 5px;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 10px;
-    }
+  .produto {
+    min-width: 180px;
+    padding: 10px;
+  }
+  .produto h3 {
+    font-size: 14px;
+  }
+  .produto p {
+    font-size: 12px;
+  }
+  .btn-carrossel {
+    font-size: 24px;
+    padding: 6px 10px;
+  }
 }
