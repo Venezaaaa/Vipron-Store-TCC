@@ -20,3 +20,18 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.banner3').forEach(banner => {
   observer.observe(banner);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

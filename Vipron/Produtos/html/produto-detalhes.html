@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+   <link rel="icon" type="image/png" href="../../Inicio/img/header/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Produto - Vipron Store</title>
+
+  <!-- ======== ESTILOS INTEGRADOS ======== -->
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #f0f4f8, #d8e2e7);
+      color: #333;
+    }
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 30px;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,.55);
+    border-bottom: 1px solid rgba(0, 119, 255, 0.2);
+    transition: .3s;
+}
+
+header.scrolled {
+    background: rgba(0,0,0,.85);
+}
+.logo {
+    padding: 8px 0px 2px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 20px ;
+}
+
+.logo img {
+    width: 70px;
+}
+
+.bt-cadastro {
+    background: linear-gradient(135deg, #6f2cff, #b366ff);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(111, 44, 255, .7), 0 0 22px rgba(179, 102, 255, .6);
+}
+
+.bt-cadastro:hover {
+    background: linear-gradient(135deg, #b366ff, #6f2cff);
+    transform: scale(1.08);
+    box-shadow: 0 0 14px rgba(111, 44, 255, .9), 0 0 30px rgba(179, 102, 255, .9);
+}
+
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    gap: 20px;
+    width: 100%;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.8s;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/* Ícone do carrinho */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-icon img {
+    width: 28px;
+    height: auto;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #2f2f2f;
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p,
+.footer-section a {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+/* Imagem que voa até o carrinho */
+.img-voando {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+  transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1), opacity 2s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transform-origin: center center;
+}
+
+/* Efeito de balanço no carrinho */
+.cart-icon img.balancar {
+  animation: shake 0.6s ease;
+}
+
+@keyframes shake {
+  0% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(-10deg); }
+  50% { transform: scale(1.1) rotate(10deg); }
+  75% { transform: scale(1.1) rotate(-10deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+
+/* Notificação */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      margin-top:120px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:80vh;
+      padding:40px 20px;
+    }
+
+    .produto-container {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:50px;
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.2);
+      padding:40px;
+      max-width:1100px;
+      animation:fadeIn 1s ease;
+    }
+
+    .produto-imagem img {
+      width:380px;
+      border-radius:15px;
+      box-shadow:0 0 25px rgba(0,0,0,0.2);
+    }
+
+    .produto-info {
+      flex:1;
+      max-width:480px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .produto-info h1 {
+      font-size:2rem;
+      color:#000;
+      margin-bottom:15px;
+    }
+
+    .produto-info p {
+      font-size:1rem;
+      line-height:1.6;
+      margin-bottom:10px;
+    }
+
+    #produto-preco {
+      font-size:1.8rem;
+      color:#007bff;
+      font-weight:bold;
+      margin-top:10px;
+    }
+
+    .extras {
+      margin:20px 0;
+      color:#333;
+    }
+
+    /* BOTÕES */
+    .botoes {
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .compra-btn, .carrinho-btn {
+      color:white;
+      border-radius:5px;
+      text-decoration:none;
+      transition:0.3s;
+      padding:12px 25px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    .compra-btn {
+      background-color:#1a1a1a;
+      border:none;
+    }
+    .compra-btn:hover {
+      background-color:#333;
+      box-shadow:0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .carrinho-btn {
+      background:linear-gradient(135deg, #6f2cff, #b366ff);
+      border:none;
+      box-shadow:0 0 10px rgba(111,44,255,.6);
+    }
+    .carrinho-btn:hover {
+      background:linear-gradient(135deg, #b366ff, #6f2cff);
+      transform:scale(1.05);
+    }
+    /* ANIMAÇÕES E RESPONSIVIDADE */
+    @keyframes fadeIn {
+      from {opacity:0; transform:translateY(20px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+
+    @media (max-width:768px) {
+      .produto-container {padding:25px; gap:30px;}
+      .produto-imagem img {width:100%; max-width:300px;}
+      .produto-info h1 {font-size:1.6rem;}
+      .produto-info p {font-size:0.95rem;}
+      .botoes {flex-direction:column;}
+      .compra-btn, .carrinho-btn {width:100%; text-align:center;}
+      header {
+        padding: 20px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    }
+
+    @media (max-width:480px) {
+      .produto-container {flex-direction:column; align-items:center;}
+      .produto-imagem img {max-width:260px;}
+      .produto-info {text-align:center;}
+      .produto-info h1 {font-size:1.4rem;}
+      .produto-info p {font-size:0.9rem;}
+        header {
+        display: flex;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 5px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+          <a href="../../Inicio/html/index.html">             <img src="../../Inicio/img/header/logo.png" alt="Vipron Store Logo"></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../../Produtos/html/produtos.html">Produtos</a></li>
+                <li><a href="../../Contatos/html/contato.html">Contato</a></li>
+                <li><a href="../../Login/html/cadastro.html" class="bt-cadastro">Cadastro</a></li>
+                <li class="cart-icon">
+                    <a href="../../Carrinho/html/carrinho.html">
+                        <img src="../../Inicio/img/header/carrinho.png" alt="Carrinho">
+                        <span class="cart-badge">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+  <!-- ===== CONTEÚDO DO PRODUTO ===== -->
+  <main>
+    <div class="produto-container">
+      
+      <div class="produto-imagem">
+        <img id="produto-imagem" src="" alt="Produto">
+      </div>
+
+      <div class="produto-info">
+        <h1 id="produto-nome">Carregando...</h1>
+        <p id="produto-descricao">Buscando informações do produto...</p>
+        <p id="produto-preco"></p>
+
+        <div class="extras">
+          <p>⭐ Avaliação: <strong>4.8 / 5</strong></p>
+          <p>🚚 Frete grátis para todo o Brasil</p>
+          <p>📦 Em estoque</p>
+        </div>
+
+        <div class="botoes">
+          <button class="compra-btn" id="btn-adicionar">Adicionar ao Carrinho</button>
+          <button class="carrinho-btn" id="btn-comprar">Comprar Agora</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-section">
+      <h3>Vipron Store</h3>
+      <p>Sua loja de tecnologia de confiança.</p>
+    </div>
+    <div class="footer-section">
+      <h3>Contato</h3>
+      <p>Email: suporte@vipronstore.com</p>
+      <p>Telefone: (11) 99999-9999</p>
+    </div>
+    <div class="footer-section">
+      <h3>Redes Sociais</h3>
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+   <script src="../../Carrinho/css/script.js"></script>
+  <script src="../../Produtos/html/produto-detalhes.js"></script>
+ 
+</body>
+</html>

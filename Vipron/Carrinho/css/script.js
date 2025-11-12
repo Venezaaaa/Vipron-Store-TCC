@@ -270,3 +270,28 @@ document.querySelectorAll('.carrinho-btn').forEach(button => {
 
   setInterval(atualizarContador, 1000);
   atualizarContador();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
