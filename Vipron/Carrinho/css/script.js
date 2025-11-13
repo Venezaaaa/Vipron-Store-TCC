@@ -96,7 +96,7 @@ function animarImagemParaCarrinho(srcImagem, nomeProduto) {
     imgClone.remove();
     iconeCarrinho.classList.add('balancar');
     setTimeout(() => iconeCarrinho.classList.remove('balancar'), 600);
-  }, 3000);
+  }, 6000);
 }
 
 
