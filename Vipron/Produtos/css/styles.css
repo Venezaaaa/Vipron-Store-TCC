@@ -537,6 +537,27 @@ button {
 }
 
 @media (max-width: 480px) {
+
+    .produtos, .produtos_top {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0px;
+    }
+    
+
+    /* 3 produtos por linha */
+    .produto {
+        flex: 1 1 calc(33% - 20px);
+        max-width: calc(50% - 20px);
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .produto h3 {
+        font-size: 12px;
+    }
+
     .produtos, .produtos_top {
         display: flex;
         flex-wrap: wrap;

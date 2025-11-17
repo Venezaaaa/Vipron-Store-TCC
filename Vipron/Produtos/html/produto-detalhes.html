@@ -290,35 +290,47 @@ footer {
       from {opacity:0; transform:translateY(20px);}
       to {opacity:1; transform:translateY(0);}
     }
-
-    @media (max-width:768px) {
-      .produto-container {padding:25px; gap:30px;}
+@media (max-width: 768px) {
+  .corpo_info {
+    display: grid;
+    width: 100%;
+  }
+  .logo{ 
+      width: 15%;
+  }
+  .logo img{ 
+      width: 3rem;
+  }
+  .produto-container {padding:25px; gap:30px;}
       .produto-imagem img {width:100%; max-width:300px;}
       .produto-info h1 {font-size:1.6rem;}
       .produto-info p {font-size:0.95rem;}
       .botoes {flex-direction:column;}
       .compra-btn, .carrinho-btn {width:100%; text-align:center;}
-      header {
-        padding: 20px;
-    }
 
-    nav ul {
-        gap: 10px;
-    }
+  header {
+      padding: 20px;
+  }
 
-    nav ul li a {
-        font-size: 14px;
-    }
+  nav ul {
+      gap: 10px;
+  }
+
+  nav ul li a {
+      font-size: 14px;
+  }
 
 
-    footer {
-        flex-direction: column;
-        gap: 15px;
-    }
+  footer {
+      flex-direction: column;
+      gap: 15px;
+  }
+}
 
-    }
-
-    @media (max-width:480px) {
+@media (max-width: 480px) {
+  .carrinho-btn img {
+      width: 50%;
+  } 
       .produto-container {flex-direction:column; align-items:center;}
       .produto-imagem img {max-width:260px;}
       .produto-info {text-align:center;}
@@ -328,20 +340,30 @@ footer {
         display: flex;
         padding: 15px;
     }
+  .produtos button img{
+      width: 15px;
+  }
+.carrinho-btn {
+  margin-bottom: 10px;
+}
+  header {
+      display: flex;
+      padding: 15px;
+  }
 
-    nav ul {
-        gap: 5px;
-    }
+  nav ul {
+      gap: 5px;
+  }
 
-    nav ul li a {
-        font-size: 12px;
-    }
+  nav ul li a {
+      font-size: 12px;
+  }
 
-    footer {
-        flex-direction: column;
-        gap: 10px;
-    }
-    }
+  footer {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
   </style>
 </head>
 
