@@ -32,7 +32,6 @@ header {
     padding: 8px 0px 2px;
     margin-left: 5%;
     margin-right: 5%;
-    border-radius: 20px ;
 }
 
 .logo img {
@@ -169,7 +168,8 @@ footer {
 /* Produtos */
 .produtos, .produtos_top {
     width: 100%;
-    background-color: #fff;
+    background: linear-gradient(to bottom, #f0f4f8, #d8e2e7); /* Gradiente suave do topo para baixo */
+    color: #333;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
