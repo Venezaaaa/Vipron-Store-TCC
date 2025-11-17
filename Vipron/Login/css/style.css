@@ -10,6 +10,7 @@ body {
 }
   
   h1 {
+    text-align: center;
     color: #000;
     font-size: 1.5em;
   }
@@ -20,27 +21,30 @@ body {
   }
   
   .form-container {
+    text-align: center;
     background: #ffffffbe;
     padding: 30px;
-    width:  40%;
+    width:  50%;
     margin: auto;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
   }
   .form-container p {
-    font-size: 20px;
+    font-size: 50px;
     background-color: #000;
+  }
+  .form-container button {
+    display: flex;
+    justify-content: center;
   }
 
   .form-containerr {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ffffffbe;
     padding: 10px;
     width:  40%;
     margin: auto;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 30px;
   }
 

@@ -272,6 +272,7 @@ footer {
 /* Botões */
 .compra-btn, .btn-carrinho, .carrinho-btn {
     color: white;
+    text-decoration: none;
     border-radius: 5px;
     text-decoration: none;
     transition: 0.3s;   
@@ -293,6 +294,7 @@ footer {
     font-size: 12px;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .compra-btn:hover {
@@ -565,8 +567,8 @@ footer {
     }
 
     .produto {
-        flex: 1 1 30%;
-        max-width: 30%;
+        flex: 1 1 50%;
+        max-width: 50%;
     }
 
     .produto h3 {
@@ -684,7 +686,7 @@ footer {
     /* 3 produtos por linha */
     .produto {
         flex: 1 1 calc(33% - 20px);
-        max-width: calc(33% - 20px);
+        max-width: calc(50% - 20px);
         box-sizing: border-box;
         margin-bottom: 10px;
     }
@@ -702,7 +704,7 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 5px;
+        gap: 10px;
     }
 
     /* Ícone do carrinho no botão */
