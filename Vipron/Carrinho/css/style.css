@@ -463,6 +463,9 @@ footer {
   }
 /* Responsividade */
 @media (max-width: 768px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+}
   .corpo_info {
     display: grid;
     width: 100%;
@@ -536,6 +539,92 @@ footer {
       gap: 10px;
   }
 }
+/* ----------- CONTAINER GERAL ----------- */
+
+.finalizar-container {
+  padding: 40px 6%;
+}
+
+.checkout {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo-finalizar {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.sub-finalizar {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* GRID PRINCIPAL */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* ----------- FORMULÁRIO ----------- */
+
+.checkout-form {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.titulo-secao {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.checkout-form input,
+.checkout-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 8px 0 15px;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus {
+  border-color: #6f2cff;
+  box-shadow: 0 0 5px rgba(111, 44, 255, 0.3);
+}
+
+/* ----------- BOTÃO FINALIZAR ----------- */
+
+.btn-finalizar {
+  width: 100%;
+  background-color: #6f2cff;
+  border: none;
+  padding: 14px;
+  color: white;
+  font-size: 18px;
+  border-radius: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn-finalizar:hover {
+  transform: scale(1.03);
+  background-color: #5e22d8;
+}
+
 /* ----------- FINALIZAR COMPRA ----------- */
 
 .finalizar-container {
@@ -575,18 +664,56 @@ footer {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.checkout-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
 .titulo-secao {
   margin: 20px 0 10px;
   font-size: 20px;
   font-weight: 700;
 }
 
-.pagamento-opcoes label {
-  display: block;
-  margin: 10px 0;
-  font-size: 15px;
+/* PAGAMENTO PROFISSIONAL */
+.pagamento-opcoes {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
+.pag-option {
+  flex: 1;
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: .3s;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.pag-option:hover {
+  transform: scale(1.03);
+  border-color: #6f2cff;
+}
+
+.pag-option img {
+  width: 40px;
+}
+
+.pag-option input {
+  width: auto;
+}
+
+/* BOTÃO */
 .btn-finalizar {
   width: 100%;
   background-color: #6f2cff;
@@ -666,13 +793,3 @@ footer {
   transform: scale(1.03);
   opacity: .9;
 }
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .checkout-grid {
-      grid-template-columns: 1fr;
-  }
-}
-
-
-/* Rodape */

@@ -11,142 +11,152 @@
 
 <body>
 
-    <!-- HEADER ORIGINAL (não alterado) -->
-    <header>
-        <div class="logo">
-          <a href="../../Inicio/html/index.html">
-              <img src="../../Inicio/img/header/logo.png" alt="Vipron Store Logo">
+  <!-- ================== HEADER (NÃO ALTERADO) ================== -->
+  <header>
+    <div class="logo">
+      <a href="../../Inicio/html/index.html">
+        <img src="../../Inicio/img/header/logo.png" alt="Vipron Store Logo">
+      </a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../../Produtos/html/produtos.html">Produtos</a></li>
+        <li><a href="../../Contatos/html/contato.html">Contato</a></li>
+        <li><a href="../../Login/html/cadastro.html" class="bt-cadastro">Cadastro</a></li>
+        <li class="cart-icon">
+          <a href="../../Carrinho/html/carrinho.html">
+            <img src="../../Inicio/img/header/carrinho.png" alt="Carrinho">
+            <span class="cart-badge">0</span>
           </a>
-        </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- ============================================================== -->
 
-        <nav>
-            <ul>
-                <li><a href="../../Produtos/html/produtos.html">Produtos</a></li>
-                <li><a href="../../Contatos/html/contato.html">Contato</a></li>
-                <li><a href="../../Login/html/cadastro.html" class="bt-cadastro">Cadastro</a></li>
-                <li class="cart-icon">
-                    <a href="../../Carrinho/html/carrinho.html">
-                        <img src="../../Inicio/img/header/carrinho.png" alt="Carrinho">
-                        <span class="cart-badge">0</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  <section class="finalizar-container">
 
-    <!-- CORPO DA PÁGINA -->
-    <section class="finalizar-container">
+    <h1 class="titulo-finalizar">Finalizar Compra</h1>
+    <p class="sub-finalizar">Revise seus dados e conclua seu pedido</p>
 
-        <div class="checkout">
+    <div class="checkout">
 
-            <!-- TÍTULO -->
-            <h1 class="titulo-finalizar">Finalizar Compra</h1>
-            <p class="sub-finalizar">Revise suas informações antes de concluir o pedido</p>
+      <div class="checkout-grid">
 
-            <div class="checkout-grid">
+        <!-- =============== FORMULÁRIO =============== -->
+        <div class="checkout-form">
 
-                <!-- FORMULÁRIO - LADO ESQUERDO -->
-                <div class="checkout-form">
+          <h2 class="titulo-secao">📍 Endereço de Entrega</h2>
 
-                    <h2 class="titulo-secao">Informações do Cliente</h2>
+          <label>Nome Completo</label>
+          <input type="text" placeholder="Digite seu nome completo">
 
-                    <label>Nome Completo</label>
-                    <input type="text" placeholder="Seu nome completo">
+          <label>Endereço</label>
+          <input type="text" placeholder="Rua, número, bairro">
 
-                    <label>Email</label>
-                    <input type="email" placeholder="Seu email">
+          <label>Cidade</label>
+          <input type="text" placeholder="Cidade">
 
-                    <label>Telefone</label>
-                    <input type="text" placeholder="(00) 00000-0000">
+          <label>CEP</label>
+          <input type="text" placeholder="00000-000">
 
-                    <h2 class="titulo-secao">Endereço de Entrega</h2>
+          <label>Telefone</label>
+          <input type="text" placeholder="(00) 00000-0000">
 
-                    <label>CEP</label>
-                    <input type="text" placeholder="00000-000">
+          <h2 class="titulo-secao">💳 Forma de Pagamento</h2>
 
-                    <label>Rua</label>
-                    <input type="text" placeholder="Nome da rua">
+          <div class="pagamento-opcoes">
 
-                    <label>Número</label>
-                    <input type="text" placeholder="Nº">
-
-                    <label>Bairro</label>
-                    <input type="text" placeholder="Seu bairro">
-
-                    <label>Cidade</label>
-                    <input type="text" placeholder="Cidade">
-
-                    <label>Estado</label>
-                    <input type="text" placeholder="Estado">
-
-                    <h2 class="titulo-secao">Forma de Pagamento</h2>
-
-                    <div class="pagamento-opcoes">
-                        <label><input type="radio" name="pagamento"> Cartão de Crédito</label>
-                        <label><input type="radio" name="pagamento"> Pix (Recomendado)</label>
-                        <label><input type="radio" name="pagamento"> Boleto Bancário</label>
-                    </div>
-
-                    <button class="btn-finalizar">Finalizar Pedido</button>
-
-                </div>
-
-                <!-- RESUMO - LADO DIREITO -->
-                <div class="checkout-resumo">
-                    <h2 class="titulo-secao">Resumo do Pedido</h2>
-
-                    <div class="resumo-produto">
-                        <img src="../../Produtos/img/exemplo.png" alt="">
-                        <div>
-                            <h3>Produto Exemplo</h3>
-                            <p>Quantidade: 1</p>
-                        </div>
-                        <span class="preco">R$ 199,90</span>
-                    </div>
-
-                    <div class="linha-resumo">
-                        <span>Subtotal</span>
-                        <span>R$ 199,90</span>
-                    </div>
-
-                    <div class="linha-resumo">
-                        <span>Frete</span>
-                        <span>Grátis</span>
-                    </div>
-
-                    <div class="total-final">
-                        <span>Total</span>
-                        <span>R$ 199,90</span>
-                    </div>
-
-                    <button class="btn-resumo">Confirmar Pedido</button>
-                </div>
-
+            <div class="pag-option">
+              <input type="radio" name="pagamento" id="pix">
+              <label for="pix">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_Pix.png">
+                <span>Pix</span>
+              </label>
             </div>
 
-        </div>
-    </section>
+            <div class="pag-option">
+              <input type="radio" name="pagamento" id="cartao">
+              <label for="cartao">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Mastercard-logo.png">
+                <span>Cartão de Crédito</span>
+              </label>
+            </div>
 
-    <!-- RODAPÉ ORIGINAL (não mexido) -->
-    <footer>
-        <div class="footer-section">
-            <h3>Contato</h3>
-            <p>Email: contato@vipronstore.com</p>
-            <p>Telefone: (11) 1234-5678</p>
+            <div class="pag-option">
+              <input type="radio" name="pagamento" id="boleto">
+              <label for="boleto">
+                <img src="https://cdn-icons-png.flaticon.com/512/6064/6064930.png">
+                <span>Boleto Bancário</span>
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-finalizar">Concluir Pedido</button>
+
         </div>
-        <div class="footer-section">
-            <h3>Links Úteis</h3>
-            <a href="../../Cadastro/html/Politica.html">Política de Privacidade</a><br>
-            <a href="../../Cadastro/html/Lading.html">Quem Somos?</a><br>
-            <a href="../../Login/html/cadastro.html">Cadastrar/Entrar</a><br>
-            <a href="../../Carrinho/html/carrinho.html">Meu Carrinho</a><br>
-            <a href="../../Contatos/html/contato.html">Suporte</a>
+
+        <!-- =============== RESUMO =============== -->
+        <div class="checkout-resumo">
+
+          <h2 class="titulo-secao">Resumo do Pedido</h2>
+
+          <!-- PRODUTO -->
+          <div class="resumo-produto">
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155228f7dd?auto=format&fit=crop&w=300&q=80">
+            <div>
+              <h4>Fone Bluetooth Pro</h4>
+              <p>Quantidade: 1</p>
+            </div>
+          </div>
+
+          <div class="linha-resumo">
+            <span>Subtotal</span>
+            <strong>R$ 199,90</strong>
+          </div>
+
+          <div class="linha-resumo">
+            <span>Frete</span>
+            <strong>Grátis</strong>
+          </div>
+
+          <div class="total-final">
+            <span>Total</span>
+            <strong>R$ 199,90</strong>
+          </div>
+
+          <button class="btn-resumo">Finalizar Compra</button>
+
         </div>
-        <div class="footer-section">
-            <h3>Copyright</h3>
-            <p>&copy; 2025 Vipron - Todos os direitos estão preservados e guardados</p>
-        </div>
-    </footer>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================== FOOTER (NÃO ALTERADO) ================== -->
+  <footer>
+    <div class="footer-section">
+      <h3>Contato</h3>
+      <p>Email: contato@vipronstore.com</p>
+      <p>Telefone: (11) 1234-5678</p>
+    </div>
+    <div class="footer-section">
+      <h3>Links Úteis</h3>
+      <a href="../../Cadastro/html/Politica.html">Política de Privacidade</a><br>
+      <a href="../../Cadastro/html/Lading.html">Quem Somos?</a><br>
+      <a href="../../Login/html/cadastro.html">Cadastrar/Entrar</a><br>
+      <a href="../../Carrinho/html/carrinho.html">Meu Carrinho</a><br>
+      <a href="../../Contatos/html/contato.html">Suporte</a>
+    </div>
+    <div class="footer-section">
+      <h3>Copyright</h3>
+      <p>&copy; 2025 Vipron - Todos os direitos estão preservados e guardados</p>
+    </div>
+  </footer>
+  <!-- ============================================================== -->
 
 </body>
 </html>
