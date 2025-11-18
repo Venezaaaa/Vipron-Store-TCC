@@ -536,6 +536,143 @@ footer {
       gap: 10px;
   }
 }
+/* ----------- FINALIZAR COMPRA ----------- */
+
+.finalizar-container {
+  padding: 40px 6%;
+}
+
+.checkout {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titulo-finalizar {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.sub-finalizar {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+/* FORMULÁRIO */
+.checkout-form {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.titulo-secao {
+  margin: 20px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pagamento-opcoes label {
+  display: block;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.btn-finalizar {
+  width: 100%;
+  background-color: #6f2cff;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-size: 17px;
+  border-radius: 12px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.btn-finalizar:hover {
+  transform: scale(1.03);
+  background-color: #5e22d8;
+}
+
+/* RESUMO DO PEDIDO */
+.checkout-resumo {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+  height: fit-content;
+}
+
+.resumo-produto {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f4f4f4;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.resumo-produto img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.linha-resumo {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.total-final {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 2px solid #ddd;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btn-resumo {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: black;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  transition: .3s;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-resumo:hover {
+  transform: scale(1.03);
+  opacity: .9;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .checkout-grid {
+      grid-template-columns: 1fr;
+  }
+}
 
 
 /* Rodape */

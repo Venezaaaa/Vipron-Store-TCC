@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Finalizar Compra</title>
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-      <link rel="icon" type="image/png" href="../../Inicio/img/header/logo.png">
+  <link rel="icon" type="image/png" href="../../Inicio/img/header/logo.png">
 </head>
+
 <body>
+
+    <!-- HEADER ORIGINAL (não alterado) -->
     <header>
         <div class="logo">
-          <a href="../../Inicio/html/index.html">             <img src="../../Inicio/img/header/logo.png" alt="Vipron Store Logo"></a>
+          <a href="../../Inicio/html/index.html">
+              <img src="../../Inicio/img/header/logo.png" alt="Vipron Store Logo">
+          </a>
         </div>
 
         <nav>
@@ -28,58 +33,120 @@
             </ul>
         </nav>
     </header>
-    <section class="corpo-html">
 
-    </section>
-    <div class="corpo_info">
-      <div class="infos">
-          <div class="center-image">
-            <img src="../../Contatos/img/Parte de baixo/Account.png" alt="">
-          </div>
-          <h1>Suporte do Produto</h1>
-          <p>Até 3 anos de garantia no locar disponíveis para sua tranquilidade</p>
-      </div>
+    <!-- CORPO DA PÁGINA -->
+    <section class="finalizar-container">
 
+        <div class="checkout">
 
-      <div class="infos">
-        <div class="center-image">          
-          <img src="../../Contatos/img/Parte de baixo/Saving.png" alt="">
+            <!-- TÍTULO -->
+            <h1 class="titulo-finalizar">Finalizar Compra</h1>
+            <p class="sub-finalizar">Revise suas informações antes de concluir o pedido</p>
+
+            <div class="checkout-grid">
+
+                <!-- FORMULÁRIO - LADO ESQUERDO -->
+                <div class="checkout-form">
+
+                    <h2 class="titulo-secao">Informações do Cliente</h2>
+
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Seu nome completo">
+
+                    <label>Email</label>
+                    <input type="email" placeholder="Seu email">
+
+                    <label>Telefone</label>
+                    <input type="text" placeholder="(00) 00000-0000">
+
+                    <h2 class="titulo-secao">Endereço de Entrega</h2>
+
+                    <label>CEP</label>
+                    <input type="text" placeholder="00000-000">
+
+                    <label>Rua</label>
+                    <input type="text" placeholder="Nome da rua">
+
+                    <label>Número</label>
+                    <input type="text" placeholder="Nº">
+
+                    <label>Bairro</label>
+                    <input type="text" placeholder="Seu bairro">
+
+                    <label>Cidade</label>
+                    <input type="text" placeholder="Cidade">
+
+                    <label>Estado</label>
+                    <input type="text" placeholder="Estado">
+
+                    <h2 class="titulo-secao">Forma de Pagamento</h2>
+
+                    <div class="pagamento-opcoes">
+                        <label><input type="radio" name="pagamento"> Cartão de Crédito</label>
+                        <label><input type="radio" name="pagamento"> Pix (Recomendado)</label>
+                        <label><input type="radio" name="pagamento"> Boleto Bancário</label>
+                    </div>
+
+                    <button class="btn-finalizar">Finalizar Pedido</button>
+
+                </div>
+
+                <!-- RESUMO - LADO DIREITO -->
+                <div class="checkout-resumo">
+                    <h2 class="titulo-secao">Resumo do Pedido</h2>
+
+                    <div class="resumo-produto">
+                        <img src="../../Produtos/img/exemplo.png" alt="">
+                        <div>
+                            <h3>Produto Exemplo</h3>
+                            <p>Quantidade: 1</p>
+                        </div>
+                        <span class="preco">R$ 199,90</span>
+                    </div>
+
+                    <div class="linha-resumo">
+                        <span>Subtotal</span>
+                        <span>R$ 199,90</span>
+                    </div>
+
+                    <div class="linha-resumo">
+                        <span>Frete</span>
+                        <span>Grátis</span>
+                    </div>
+
+                    <div class="total-final">
+                        <span>Total</span>
+                        <span>R$ 199,90</span>
+                    </div>
+
+                    <button class="btn-resumo">Confirmar Pedido</button>
+                </div>
+
+            </div>
+
         </div>
-
-        <h1>Pessoas  confiáveis</h1>
-        <p>Com grandes descontos, entrega gratuita e um especialista de suporte dedicado.</p>
-      </div>
-
-
-      <div class="infos">
-        <div class="center-image">          
-          <img src="../../Contatos/img/Parte de baixo/Support.png" alt="">
-        </div>
-        <h1>Descontos Incriveis </h1>
-        <p>Até 70% de desconto em produtos novos, você pode ter certeza do melhor preço.</p>
-    </div>
-  </section>
-
-    <section>
-        <footer>
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <p>Email: contato@vipronstore.com</p>
-                <p>Telefone: (11) 1234-5678</p>
-            </div>
-            <div class="footer-section">
-                <h3>Links Úteis</h3>
-                <a href="../../Cadastro/html/Politica.html">Política de Privacidade</a><br>
-                <a href="../../Cadastro/html/Lading.html">Quem Somos?</a><br>
-                <a href="../../Login/html/cadastro.html">Cadastrar/Entrar</a><br>
-                <a href="../../Carrinho/html/carrinho.html">Meu Carrinho</a><br>
-                <a href="../../Contatos/html/contato.html">Suporte</a>
-            </div>
-            <div class="footer-section">
-                <h3>Copyright</h3>
-                <p>&copy; 2025 Vipron - Todos os direitos estão preservados e guardados</p>
-            </div>
-        </footer>
     </section>
+
+    <!-- RODAPÉ ORIGINAL (não mexido) -->
+    <footer>
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p>Email: contato@vipronstore.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+        </div>
+        <div class="footer-section">
+            <h3>Links Úteis</h3>
+            <a href="../../Cadastro/html/Politica.html">Política de Privacidade</a><br>
+            <a href="../../Cadastro/html/Lading.html">Quem Somos?</a><br>
+            <a href="../../Login/html/cadastro.html">Cadastrar/Entrar</a><br>
+            <a href="../../Carrinho/html/carrinho.html">Meu Carrinho</a><br>
+            <a href="../../Contatos/html/contato.html">Suporte</a>
+        </div>
+        <div class="footer-section">
+            <h3>Copyright</h3>
+            <p>&copy; 2025 Vipron - Todos os direitos estão preservados e guardados</p>
+        </div>
+    </footer>
+
 </body>
 </html>
