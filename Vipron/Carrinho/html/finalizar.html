@@ -1,162 +1,380 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Finalizar Compra</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="../../Inicio/img/header/logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../../Carrinho/css/style.css">
+<title>Finalizar Compra</title>
+
 </head>
-
 <body>
-
-  <!-- ================== HEADER (NÃO ALTERADO) ================== -->
-  <header>
+<header>
     <div class="logo">
-      <a href="../../Inicio/html/index.html">
-        <img src="../../Inicio/img/header/logo.png" alt="Vipron Store Logo">
-      </a>
+      <a href="../../Inicio/html/index.html">             <img src="../../Inicio/img/header/logo.png" alt="Vipron Store Logo"></a>
     </div>
 
     <nav>
-      <ul>
-        <li><a href="../../Produtos/html/produtos.html">Produtos</a></li>
-        <li><a href="../../Contatos/html/contato.html">Contato</a></li>
-        <li><a href="../../Login/html/cadastro.html" class="bt-cadastro">Cadastro</a></li>
-        <li class="cart-icon">
-          <a href="../../Carrinho/html/carrinho.html">
-            <img src="../../Inicio/img/header/carrinho.png" alt="Carrinho">
-            <span class="cart-badge">0</span>
-          </a>
-        </li>
-      </ul>
+        <ul>
+            <li><a href="../../Produtos/html/produtos.html">Produtos</a></li>
+            <li><a href="../../Contatos/html/contato.html">Contato</a></li>
+            <li><a href="../../Login/html/cadastro.html" class="bt-cadastro">Cadastro</a></li>
+            <li class="cart-icon">
+                <a href="../../Carrinho/html/carrinho.html">
+                    <img src="../../Inicio/img/header/carrinho.png" alt="Carrinho">
+                    <span class="cart-badge">0</span>
+                </a>
+            </li>
+        </ul>
     </nav>
-  </header>
-  <!-- ============================================================== -->
+</header>
 
-  <section class="finalizar-container">
+<section class="finalizar-container">
+  <h1 class="titulo-finalizar">Finalizar Compra</h1>
+  <p class="sub-finalizar">Revise seus dados e conclua seu pedido</p>
 
-    <h1 class="titulo-finalizar">Finalizar Compra</h1>
-    <p class="sub-finalizar">Revise seus dados e conclua seu pedido</p>
+  <div class="checkout-grid">
 
-    <div class="checkout">
+    <!-- ================= FORMULÁRIO ================= -->
+    <div class="checkout-form">
 
-      <div class="checkout-grid">
+      <h2 class="titulo-secao">📍 Endereço de Entrega</h2>
 
-        <!-- =============== FORMULÁRIO =============== -->
-        <div class="checkout-form">
+<label>Nome Completo</label>
+<input type="text" placeholder="Digite seu nome completo">
 
-          <h2 class="titulo-secao">📍 Endereço de Entrega</h2>
+<label>CEP</label>
+<input type="text" placeholder="00000-000">
 
-          <label>Nome Completo</label>
-          <input type="text" placeholder="Digite seu nome completo">
+<label>Endereço</label>
+<input type="text" placeholder="Rua">
 
-          <label>Endereço</label>
-          <input type="text" placeholder="Rua, número, bairro">
+<label>Número</label>
+<input type="text" placeholder="Número">
 
-          <label>Cidade</label>
-          <input type="text" placeholder="Cidade">
+<label>Bairro</label>
+<input type="text" placeholder="Bairro">
 
-          <label>CEP</label>
-          <input type="text" placeholder="00000-000">
+<label>Cidade</label>
+<input type="text" placeholder="Cidade">
 
-          <label>Telefone</label>
-          <input type="text" placeholder="(00) 00000-0000">
+<label>Estado</label>
+<input type="text" placeholder="Estado">
 
-          <h2 class="titulo-secao">💳 Forma de Pagamento</h2>
+<label>Telefone</label>
+<input type="text" placeholder="(00) 00000-0000">
 
-          <div class="pagamento-opcoes">
 
-            <div class="pag-option">
-              <input type="radio" name="pagamento" id="pix">
-              <label for="pix">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_Pix.png">
-                <span>Pix</span>
-              </label>
-            </div>
+      <h2 class="titulo-secao">💳 Forma de Pagamento</h2>
 
-            <div class="pag-option">
-              <input type="radio" name="pagamento" id="cartao">
-              <label for="cartao">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Mastercard-logo.png">
-                <span>Cartão de Crédito</span>
-              </label>
-            </div>
+      <div class="pagamento-opcoes">
 
-            <div class="pag-option">
-              <input type="radio" name="pagamento" id="boleto">
-              <label for="boleto">
-                <img src="https://cdn-icons-png.flaticon.com/512/6064/6064930.png">
-                <span>Boleto Bancário</span>
-              </label>
-            </div>
+        <label class="pag-option">
+          <input type="radio" name="pagamento" value="pix">
+          <div class="pag-card">
+            <img class="pag-img" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Logo_Pix.png">
+            <span>Pix</span>
           </div>
+        </label>
 
-          <button class="btn-finalizar">Concluir Pedido</button>
-
-        </div>
-
-        <!-- =============== RESUMO =============== -->
-        <div class="checkout-resumo">
-
-          <h2 class="titulo-secao">Resumo do Pedido</h2>
-
-          <!-- PRODUTO -->
-          <div class="resumo-produto">
-            <img src="https://images.unsplash.com/photo-1585386959984-a4155228f7dd?auto=format&fit=crop&w=300&q=80">
-            <div>
-              <h4>Fone Bluetooth Pro</h4>
-              <p>Quantidade: 1</p>
-            </div>
+        <label class="pag-option">
+          <input type="radio" name="pagamento" value="cartao">
+          <div class="pag-card">
+            <img class="pag-img" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Mastercard-logo.png">
+            <span>Cartão de Crédito</span>
           </div>
+        </label>
 
-          <div class="linha-resumo">
-            <span>Subtotal</span>
-            <strong>R$ 199,90</strong>
+        <label class="pag-option">
+          <input type="radio" name="pagamento" value="boleto">
+          <div class="pag-card">
+            <img class="pag-img" src="https://cdn-icons-png.flaticon.com/512/6064/6064930.png">
+            <span>Boleto Bancário</span>
           </div>
-
-          <div class="linha-resumo">
-            <span>Frete</span>
-            <strong>Grátis</strong>
-          </div>
-
-          <div class="total-final">
-            <span>Total</span>
-            <strong>R$ 199,90</strong>
-          </div>
-
-          <button class="btn-resumo">Finalizar Compra</button>
-
-        </div>
+        </label>
 
       </div>
 
+      <button class="btn-finalizar btn-resumo">Finalizar Compra</button>
+
     </div>
 
-  </section>
+    <!-- ================= RESUMO DO PEDIDO ================= -->
+    <div class="checkout-resumo">
+      <h2 class="titulo-secao">Resumo do Pedido</h2>
 
-  <!-- ================== FOOTER (NÃO ALTERADO) ================== -->
-  <footer>
-    <div class="footer-section">
-      <h3>Contato</h3>
-      <p>Email: contato@vipronstore.com</p>
-      <p>Telefone: (11) 1234-5678</p>
+      <div id="lista-pedido"></div>
+
+      <div class="linha-resumo">
+        <span>Subtotal</span>
+        <strong id="subtotal">R$ 0,00</strong>
+      </div>
+
+      <div class="linha-resumo">
+        <span>Frete</span>
+        <strong>Grátis</strong>
+      </div>
+
+      <div class="total-final">
+        <span>Total</span>
+        <strong id="total">R$ 0,00</strong>
+      </div>
     </div>
-    <div class="footer-section">
-      <h3>Links Úteis</h3>
-      <a href="../../Cadastro/html/Politica.html">Política de Privacidade</a><br>
-      <a href="../../Cadastro/html/Lading.html">Quem Somos?</a><br>
-      <a href="../../Login/html/cadastro.html">Cadastrar/Entrar</a><br>
-      <a href="../../Carrinho/html/carrinho.html">Meu Carrinho</a><br>
-      <a href="../../Contatos/html/contato.html">Suporte</a>
-    </div>
-    <div class="footer-section">
-      <h3>Copyright</h3>
-      <p>&copy; 2025 Vipron - Todos os direitos estão preservados e guardados</p>
-    </div>
-  </footer>
-  <!-- ============================================================== -->
+
+  </div>
+</section>
+
+<!-- ================= MODAIS ================= -->
+
+<!-- Modal Pagamento -->
+<div id="modalPagamento">
+  <div id="conteudoPagamento"></div>
+</div>
+
+<!-- Loading -->
+<div id="modalLoading">
+  <div class="loader"></div>
+</div>
+
+<!-- Final -->
+<div id="modalFinal">
+  ✔ Pagamento Concluído!
+</div>
+
+<footer>
+  <div class="footer-section">
+    <h3>Contato</h3>
+    <p>Email: contato@vipronstore.com</p>
+    <p>Telefone: (11) 1234-5678</p>
+  </div>
+
+  <div class="footer-section">
+    <h3>Links Úteis</h3>
+    <a href="#">Política de Privacidade</a><br>
+    <a href="#">Quem Somos</a><br>
+    <a href="#">Cadastrar/Entrar</a><br>
+    <a href="#">Meu Carrinho</a><br>
+  </div>
+
+  <div class="footer-section">
+    <h3>Copyright</h3>
+    <p>&copy; 2025 Vipron - Todos os direitos reservados</p>
+  </div>
+</footer>
+<script>
+// =========================================
+// FUNÇÃO DE NOTIFICAÇÃO BONITA
+// =========================================
+function mostrarErro(msg) {
+  const div = document.createElement("div");
+  div.className = "notificacao-erro";
+  div.textContent = msg;
+
+  document.body.appendChild(div);
+
+  setTimeout(() => div.classList.add("mostrar"), 50);
+
+  setTimeout(() => {
+    div.classList.remove("mostrar");
+    setTimeout(() => div.remove(), 400);
+  }, 3000);
+}
+
+// =========================================
+// CARREGAR OS PRODUTOS DO LOCALSTORAGE
+// =========================================
+function carregarResumoPedido() {
+  const listaDiv = document.getElementById("lista-pedido");
+  const subtotalEl = document.getElementById("subtotal");
+  const totalEl = document.getElementById("total");
+
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+  listaDiv.innerHTML = "";
+  let subtotal = 0;
+
+  carrinho.forEach(item => {
+    let totalItem = item.preco * item.quantidade;
+    subtotal += totalItem;
+
+    listaDiv.innerHTML += `
+      <div class="resumo-produto">
+        <img src="${item.imagem}">
+        <div>
+          <h4>${item.nome}</h4>
+          <p>Quantidade: ${item.quantidade}</p>
+          <p>Preço: R$ ${totalItem.toFixed(2)}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  subtotalEl.textContent = `R$ ${subtotal.toFixed(2)}`;
+  totalEl.textContent = `R$ ${subtotal.toFixed(2)}`;
+}
+
+window.onload = carregarResumoPedido;
+
+// =========================================
+// VALIDAR FORMULÁRIO ANTES DE PAGAR
+// =========================================
+function validarFormulario() {
+  const camposObrigatorios = [
+    "Digite seu nome completo",
+    "00000-000",
+    "Rua",
+    "Número",
+    "Bairro",
+    "Cidade",
+    "Estado",
+    "(00) 00000-0000"
+  ];
+
+  for (let placeholder of camposObrigatorios) {
+    const campo = [...document.querySelectorAll("input")]
+      .find(i => i.placeholder === placeholder);
+
+    if (campo && campo.value.trim() === "") {
+      mostrarErro(`Preencha o campo: ${placeholder}`);
+      campo.focus();
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// =========================================
+// FINALIZAR COMPRA
+// =========================================
+document.querySelector(".btn-resumo").addEventListener("click", () => {
+
+  if (!validarFormulario()) return;
+
+  const metodo = document.querySelector('input[name="pagamento"]:checked');
+
+  if (!metodo) {
+    mostrarErro("Selecione um método de pagamento!");
+    return;
+  }
+
+  abrirPagamento(metodo.value);
+});
+
+// =========================================
+// MODAL DO PAGAMENTO
+// =========================================
+function abrirPagamento(tipo) {
+  const modal = document.getElementById("modalPagamento");
+  const conteudo = document.getElementById("conteudoPagamento");
+
+  modal.style.display = "flex";
+
+  if (tipo === "pix") {
+    conteudo.innerHTML = `
+      <h2>Pagamento via PIX</h2>
+      <p>Escaneie o QR Code abaixo:</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=Pagamento%20PIX"/>
+      <button id="prosseguirBtn">Prosseguir</button>
+    `;
+  }
+
+  else if (tipo === "cartao") {
+    conteudo.innerHTML = `
+      <h2>Pagamento com Cartão</h2>
+      <label>Número do Cartão</label>
+      <input type="text" placeholder="0000 0000 0000 0000">
+      <label>Validade</label>
+      <input type="text" placeholder="MM/AA">
+      <label>CVV</label>
+      <input type="text" placeholder="123">
+      <button id="prosseguirBtn">Prosseguir</button>
+    `;
+  }
+
+  else {
+    const num = Math.floor(100000000000000 + Math.random() * 900000000000000);
+    conteudo.innerHTML = `
+      <h2>Boleto Gerado</h2>
+      <p>Linha Digitável:</p>
+      <strong>${num}</strong>
+      <button id="prosseguirBtn">Prosseguir</button>
+    `;
+  }
+
+  document.getElementById("prosseguirBtn").addEventListener("click", iniciarProcessoPagamento);
+}
+
+// =========================================
+// ANIMAÇÃO DE CARREGAMENTO
+// =========================================
+function iniciarProcessoPagamento() {
+  document.getElementById("modalPagamento").style.display = "none";
+  document.getElementById("modalLoading").style.display = "flex";
+
+  setTimeout(() => {
+    document.getElementById("modalLoading").style.display = "none";
+    pagamentoConcluido();
+  }, 3000);
+}
+
+// =========================================
+// PAGAMENTO FINAL
+// =========================================
+function pagamentoConcluido() {
+  const final = document.getElementById("modalFinal");
+  final.style.display = "flex";
+
+  localStorage.removeItem("carrinho");
+
+  setTimeout(() => {
+    window.location.href = "../../Inicio/html/index.html";
+  }, 2500);
+}
+
+// =========================================
+// BUSCA DE CEP SUPER RÁPIDA + AUTO-PREENCHIMENTO
+// =========================================
+document.querySelector('input[placeholder="00000-000"]').addEventListener("input", function () {
+
+  let cep = this.value.replace(/\D/g, '');
+
+  if (cep.length <= 5) {
+    this.value = cep;
+  } else {
+    this.value = cep.substring(0, 5) + "-" + cep.substring(5, 8);
+  }
+
+  if (cep.length === 8) {
+    buscarCEP(cep);
+  }
+});
+
+function buscarCEP(cep) {
+  fetch(`https://viacep.com.br/ws/${cep}/json/`)
+    .then(r => r.json())
+    .then(data => {
+      if (data.erro) {
+        mostrarErro("CEP não encontrado!");
+        return;
+      }
+
+      preencherCampo("Rua", data.logradouro);
+      preencherCampo("Bairro", data.bairro);
+      preencherCampo("Cidade", data.localidade);
+      preencherCampo("Estado", data.uf);
+    })
+    .catch(() => mostrarErro("Erro ao buscar CEP!"));
+}
+
+function preencherCampo(campo, valor) {
+  const input = [...document.querySelectorAll("input")]
+    .find(i => i.placeholder.toLowerCase() === campo.toLowerCase());
+
+  if (input) input.value = valor;
+}
+
+
+</script>
 
 </body>
 </html>

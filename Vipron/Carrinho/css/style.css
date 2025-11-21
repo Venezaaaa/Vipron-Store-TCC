@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+  font-family: Poppins, Arial, sans-serif;
 }
 
 /* Cor de fundo */
@@ -461,11 +461,208 @@ footer {
     background-color: #007bff83;
 
   }
-/* Responsividade */
+/* ===================== CONTAINER ===================== */
+.finalizar-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.titulo-finalizar {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.sub-finalizar {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* ===================== GRID ===================== */
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr;
+  gap: 30px;
+}
+
+/* ===================== FORMULÁRIO ===================== */
+.checkout-form {
+  padding: 25px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #0002;
+}
+
+.checkout-form label {
+  display: block;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+/* BOTÕES */
+.btn-finalizar,
+.btn-resumo {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: #000000;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-finalizar:hover,
+.btn-resumo:hover {
+  opacity: 0.9;
+}
+
+/* ===================== PAGAMENTO ===================== */
+.pagamento-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.pag-option input {
+  display: none;
+}
+
+.pag-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pag-img {
+  width: 55px;
+  height: 55px;
+}
+
+.pag-option input:checked + .pag-card {
+  border-color: #4caf50;
+  background-color: #eaffea;
+  transform: scale(1.03);
+}
+
+/* ===================== RESUMO DO PEDIDO ===================== */
+.checkout-resumo {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #0002;
+  height: fit-content;
+}
+
+.resumo-produto {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #fafafa;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.resumo-produto img {
+  width: 85px;
+  height: 85px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.linha-resumo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.total-final {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ===================== MODAIS ===================== */
+#modalPagamento,
+#modalLoading,
+#modalFinal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+#conteudoPagamento {
+  background: #fff;
+  padding: 25px;
+  width: 350px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#conteudoPagamento input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #aaa;
+}
+
+.loader {
+  width: 70px;
+  height: 70px;
+  border: 7px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: girar 1s linear infinite;
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+#modalFinal {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+
+/* ======= TABLET ======= */
 @media (max-width: 768px) {
   .checkout-grid {
     grid-template-columns: 1fr;
-}
+  }
+
   .corpo_info {
     display: grid;
     width: 100%;
@@ -507,17 +704,8 @@ footer {
   }
 }
 
+/* ======= CELULAR ======= */
 @media (max-width: 480px) {
-  .corpo-carrinho {
-    display: grid;
-    
-  }
-  .carrinho-btn img {
-      width: 50%;
-  }
-  .produtos button img{
-      width: 15px;
-  }
 .carrinho-btn {
   margin-bottom: 10px;
 }
@@ -538,258 +726,117 @@ footer {
       flex-direction: column;
       gap: 10px;
   }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pag-card {
+    padding: 12px;
+  }
+
+  .pag-img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .resumo-produto img {
+    width: 70px;
+    height: 70px;
+  }
+
 }
-/* ----------- CONTAINER GERAL ----------- */
-
-.finalizar-container {
-  padding: 40px 6%;
-}
-
-.checkout {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.titulo-finalizar {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  text-align: center;
-}
-
-.sub-finalizar {
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 40px;
-  color: #555;
-}
-
-/* GRID PRINCIPAL */
-.checkout-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
-}
-
-/* ----------- FORMULÁRIO ----------- */
-
-.checkout-form {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-}
-
-.titulo-secao {
-  margin: 20px 0 10px;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.checkout-form input,
-.checkout-form select {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  outline: none;
-  margin: 8px 0 15px;
-  font-size: 15px;
-  transition: 0.3s ease;
-}
-
-.checkout-form input:focus,
-.checkout-form select:focus {
-  border-color: #6f2cff;
-  box-shadow: 0 0 5px rgba(111, 44, 255, 0.3);
-}
-
-/* ----------- BOTÃO FINALIZAR ----------- */
-
-.btn-finalizar {
-  width: 100%;
-  background-color: #6f2cff;
-  border: none;
-  padding: 14px;
+.notificacao-erro {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ff3b3b;
   color: white;
-  font-size: 18px;
-  border-radius: 12px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-.btn-finalizar:hover {
-  transform: scale(1.03);
-  background-color: #5e22d8;
-}
-
-/* ----------- FINALIZAR COMPRA ----------- */
-
-.finalizar-container {
-  padding: 40px 6%;
-}
-
-.checkout {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.titulo-finalizar {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 5px;
-  text-align: center;
-}
-
-.sub-finalizar {
-  text-align: center;
-  font-size: 16px;
-  margin-bottom: 40px;
-  color: #555;
-}
-
-.checkout-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
-}
-
-/* FORMULÁRIO */
-.checkout-form {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.checkout-form input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
+  padding: 15px 20px;
   border-radius: 10px;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: .4s;
+  z-index: 99999;
 }
 
-.titulo-secao {
-  margin: 20px 0 10px;
-  font-size: 20px;
-  font-weight: 700;
+.notificacao-erro.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ================================
+   CHECKBOX ESTILOS VIPRON STORE
+================================ */
+
+/* Esconde o checkbox padrão */
+.produto-select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  margin-right: 10px;
 }
 
-/* PAGAMENTO PROFISSIONAL */
-.pagamento-opcoes {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+/* Efeito hover */
+.produto-select:hover {
+  border-color: #000;
+  transform: scale(1.08);
 }
 
-.pag-option {
-  flex: 1;
-  background: #f4f4f4;
-  padding: 12px;
-  border-radius: 12px;
+/* Estado marcado */
+.produto-select:checked {
+  background: #000;
+  border-color: #000;
+}
+
+/* ✔ Marca interna (check animado) */
+.produto-select:checked::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  animation: marcar 0.2s ease-in-out;
+}
+
+@keyframes marcar {
+  from { transform: scale(0); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Alinhamento perfeito com a imagem e texto */
+.coluna-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: .3s;
-  border: 2px solid transparent;
-  cursor: pointer;
+}
+.btn-finalizar-compra {
+    width: 100%;
+    padding: 14px;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
 }
 
-.pag-option:hover {
-  transform: scale(1.03);
-  border-color: #6f2cff;
-}
-
-.pag-option img {
-  width: 40px;
-}
-
-.pag-option input {
-  width: auto;
-}
-
-/* BOTÃO */
-.btn-finalizar {
-  width: 100%;
-  background-color: #6f2cff;
-  border: none;
-  padding: 12px;
-  color: white;
-  font-size: 17px;
-  border-radius: 12px;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-.btn-finalizar:hover {
-  transform: scale(1.03);
-  background-color: #5e22d8;
-}
-
-/* RESUMO DO PEDIDO */
-.checkout-resumo {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
-  height: fit-content;
-}
-
-.resumo-produto {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  background: #f4f4f4;
-  padding: 12px;
-  border-radius: 12px;
-  margin-bottom: 20px;
-}
-
-.resumo-produto img {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-.linha-resumo {
-  display: flex;
-  justify-content: space-between;
-  margin: 8px 0;
-  font-size: 15px;
-}
-
-.total-final {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-  padding-top: 12px;
-  border-top: 2px solid #ddd;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.btn-resumo {
-  width: 100%;
-  margin-top: 20px;
-  padding: 12px;
-  background-color: black;
-  color: white;
-  border-radius: 12px;
-  border: none;
-  transition: .3s;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-resumo:hover {
-  transform: scale(1.03);
-  opacity: .9;
+.btn-finalizar-compra:hover {
+    background: #222;
 }
